@@ -1,0 +1,34 @@
+2026-05-22 16:21:25,876 [INFO] Experiment: exp1b_patp_platy | config: experiments/exp1b_heavy_tail/config_patp_platy.yaml
+2026-05-22 16:21:25,876 [INFO] SNR grid: [-5.0, 0.0, 5.0, 10.0, 15.0] | blocks/cell: 500 | seed: 42
+2026-05-22 16:21:25,876 [INFO] --- Dataset: uniform ---
+2026-05-22 16:21:25,911 [INFO] Generated 8000 blocks × 1024 samples in 0.03s
+2026-05-22 16:21:25,936 [INFO] alpha_pool = 1.0000 (from 200 calibration blocks, elapsed 0.02s)
+2026-05-22 16:21:25,938 [INFO] MC trials: 2500 (across 5 SNR levels)
+2026-05-22 16:21:31,256 [INFO] MC done in 5.32s (0.0021 s/trial)
+2026-05-22 16:21:31,265 [INFO] [uniform] PATP α* = 0.50 (RE=1.000, p₂=1.000)
+2026-05-22 16:21:31,308 [INFO] Wrote /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_platy/exp1b_patp_platy_uniform.csv (2500 rows)
+2026-05-22 16:21:31,310 [INFO] --- Dataset: beta2_2 ---
+2026-05-22 16:21:31,497 [INFO] Generated 8000 blocks × 1024 samples in 0.19s
+2026-05-22 16:21:31,525 [INFO] alpha_pool = 1.0000 (from 200 calibration blocks, elapsed 0.03s)
+2026-05-22 16:21:31,527 [INFO] MC trials: 2500 (across 5 SNR levels)
+2026-05-22 16:21:34,054 [INFO] MC done in 2.53s (0.0010 s/trial)
+2026-05-22 16:21:34,062 [INFO] [beta2_2] PATP α* = 0.50 (RE=1.000, p₂=1.000)
+2026-05-22 16:21:34,105 [INFO] Wrote /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_platy/exp1b_patp_platy_beta2_2.csv (2500 rows)
+2026-05-22 16:21:34,106 [INFO] --- Dataset: gennorm_b4 ---
+2026-05-22 16:21:34,444 [INFO] Generated 8000 blocks × 1024 samples in 0.34s
+2026-05-22 16:21:34,469 [INFO] alpha_pool = 1.0000 (from 200 calibration blocks, elapsed 0.02s)
+2026-05-22 16:21:34,471 [INFO] MC trials: 2500 (across 5 SNR levels)
+2026-05-22 16:21:37,044 [INFO] MC done in 2.57s (0.0010 s/trial)
+2026-05-22 16:21:37,051 [INFO] [gennorm_b4] PATP α* = 0.50 (RE=1.000, p₂=1.000)
+2026-05-22 16:21:37,094 [INFO] Wrote /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_platy/exp1b_patp_platy_gennorm_b4.csv (2500 rows)
+2026-05-22 16:21:37,095 [INFO] --- Dataset: gaussian ---
+2026-05-22 16:21:37,134 [INFO] Generated 8000 blocks × 1024 samples in 0.04s
+2026-05-22 16:21:37,159 [INFO] alpha_pool = 0.9933 (from 200 calibration blocks, elapsed 0.03s)
+2026-05-22 16:21:37,162 [INFO] MC trials: 2500 (across 5 SNR levels)
+2026-05-22 16:21:39,833 [INFO] MC done in 2.67s (0.0011 s/trial)
+2026-05-22 16:21:39,841 [INFO] [gaussian] PATP α* = 0.50 (RE=1.000, p₂=1.000)
+2026-05-22 16:21:39,888 [INFO] Wrote /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_platy/exp1b_patp_platy_gaussian.csv (2500 rows)
+2026-05-22 16:21:39,891 [INFO] Wrote summary: /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_platy/exp1b_patp_platy_summary.csv (160 rows)
+2026-05-22 16:21:39,891 [INFO] Wrote PATP sweep: /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_platy/exp1b_patp_platy_patp_sweep.csv (24 rows)
+2026-05-22 16:21:39,926 [INFO] Manifest: /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_platy/exp1b_patp_platy_manifest.json
+2026-05-22 16:21:40,503 [INFO] Embedded R ended.

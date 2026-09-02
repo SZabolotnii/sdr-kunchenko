@@ -1,0 +1,54 @@
+# Experiment 1A — PMM amplitude estimation
+# Spec: docs/specs/kunchenko_sdr_experiments.md §4.2
+
+experiment_id: exp1A_pmm_amplitude
+seed: 42
+
+dataset:
+  root: ${KU_SDR_DATA_ROOT:/Users/serhiizabolotnii/Projects/signal-denoising/data_generation/datasets}
+  name: fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8
+  scenario: fpv_telemetry
+  modulation: qpsk
+  noise: polygauss
+
+monte_carlo:
+  R: 1000                      # MC repetitions per (SNR, K, A_true)
+  snr_grid: [-5, 0, 5, 10, 15]
+  K_polygauss: [2, 3, 4, 5, 6]  # NB: primary dataset is K=3 only; for K-sweep use random_k dataset (regenerate)
+  A_true_range: [0.5, 2.0]
+  N_blocks_per_cell: 500        # blocks sampled per (SNR, K) cell; 500 reproduces the
+                                # published 2500-row run (use --blocks for faster iteration)
+
+estimators:
+  - ols
+  - mle_gaussian
+  - pmm2
+  - pmm3
+  - auto_pmm
+
+inference:
+  se_method: sandwich            # primary (cross-check with bootstrap)
+  bootstrap_B: 200
+  nr_max_iter: 20
+  nr_tol: 1.0e-8
+
+verification:
+  pass_criteria:
+    bias_threshold: 0.01
+    g_relative_error: 0.05
+    coverage_lower: 0.93
+    coverage_upper: 0.97
+    re_threshold_asymmetric: 1.2
+    re_threshold_platykurtic: 1.2
+
+# Phase 1.5 add-on (after primary results clean):
+# realnoise_validation:
+#   dataset_name: fpv_realnoise_bpsk_qpsk
+#   description: Re-run on real RadioML2018 residual noise — closes Spec §13.2 risk
+
+output:
+  results_dir: experiments/exp1_pmm_estimation/results
+  figures_dir: experiments/exp1_pmm_estimation/figures
+  results_csv: exp1A_amplitude.csv
+  manifest: manifest.json
+  verification_report: verification_report.txt

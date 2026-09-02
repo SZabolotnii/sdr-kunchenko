@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+.venv/
+venv/
+env/
+.env
+*.egg-info/
+dist/
+build/
+
+# Testing / tooling caches
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# Datasets are not redistributed here (see README §3)
+data/
+*.npy
+!tests/fixtures/*.npy
+
+# Stored results ARE tracked: results_*/ CSV, manifests, verification reports,
+# and figures are committed so every published number can be checked without
+# re-running the Monte Carlo.
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

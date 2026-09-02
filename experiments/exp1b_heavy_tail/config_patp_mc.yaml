@@ -1,0 +1,72 @@
+experiment_id: exp1b_patp_mc
+seed: 42
+
+# Monte-Carlo PATP α-sweep over heavy-tail families + Gaussian controls.
+# Demonstrates the arXiv:2605.14610 transition: optimal α moves toward the
+# fractal edge (α→0) as tails get heavier, and reverts to the power edge
+# (α=1) / OLS for Gaussian noise.
+
+datasets:
+  # α-stable: α_s ≤ 1.5 = heavy tails (ν_{3/2} exists for α_s>1; α_s=2 is Gaussian)
+  - name: alphastable_1p2
+    type: alpha_stable
+    alpha_s: 1.2
+    n_blocks: 8000
+    block_size: 1024
+  - name: alphastable_1p5
+    type: alpha_stable
+    alpha_s: 1.5
+    n_blocks: 8000
+    block_size: 1024
+  - name: alphastable_1p8
+    type: alpha_stable
+    alpha_s: 1.8
+    n_blocks: 8000
+    block_size: 1024
+  - name: alphastable_2p0
+    type: alpha_stable
+    alpha_s: 2.0   # Gaussian control
+    n_blocks: 8000
+    block_size: 1024
+  # Student-t: ν small = heavy tails; ν→∞ = Gaussian control
+  - name: studentt_nu3
+    type: student_t
+    nu: 3
+    n_blocks: 8000
+    block_size: 1024
+  - name: studentt_nu5
+    type: student_t
+    nu: 5
+    n_blocks: 8000
+    block_size: 1024
+  - name: studentt_nu10
+    type: student_t
+    nu: 10
+    n_blocks: 8000
+    block_size: 1024
+  - name: studentt_gaussian
+    type: student_t
+    nu: .inf   # Gaussian control
+    n_blocks: 8000
+    block_size: 1024
+
+monte_carlo:
+  snr_grid: [-5, 0, 5, 10, 15]
+  N_blocks_per_cell: 500
+  A_true_range: [0.5, 2.0]
+  N_calibration_blocks: 200
+  patp_alpha_grid: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+
+estimators: [ols, pmm2, pmm3, auto, pmm_frac, auto_ext, patp]
+
+verification:
+  pass_criteria:
+    re_frac_heavy: 1.5      # RE(PMM_FRAC | α_s ≤ 1.5) ≥ 1.5
+    re_frac_gaussian: 0.95  # RE(PMM_FRAC | α_s = 2.0) ≥ 0.95
+    auto_ext_safety: 1.05   # MSE(AUTO_EXT) ≤ MSE(OLS) × 1.05
+    re_patp_heavy: 1.5      # RE(PATP* | α_s ≤ 1.5) ≥ 1.5
+    re_patp_gaussian: 0.95  # RE(PATP* | Gaussian control) ≥ 0.95
+
+output:
+  results_dir: experiments/exp1b_heavy_tail/results_patp_mc
+  figures_dir: experiments/exp1b_heavy_tail/figures_patp_mc

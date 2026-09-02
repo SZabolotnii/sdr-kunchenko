@@ -1,0 +1,85 @@
+{
+  "experiment_id": "exp1b_patp_real",
+  "git_sha": "5795f5e5a80bc94efa821299502cc9dfdf1fead2",
+  "timestamp_utc": "2026-05-22T13:22:22.647287+00:00",
+  "python": "3.13.12",
+  "platform": "macOS-26.4.1-arm64-arm-64bit-Mach-O",
+  "config": {
+    "experiment_id": "exp1b_patp_real",
+    "seed": 42,
+    "datasets": [
+      {
+        "name": "mavic_ocusync_heavytail",
+        "type": "iq_heavy_tail",
+        "iq_path": "data/tampere_extract/DJI_mavic_pro_2G.bin",
+        "dtype": "int16",
+        "block_size": 1024,
+        "gamma4_threshold": 3.0,
+        "gamma3_max": 0.5,
+        "min_blocks": 250,
+        "max_complex_samples": 120000000
+      },
+      {
+        "name": "parrot_disco_heavytail",
+        "type": "iq_heavy_tail",
+        "iq_path": "data/tampere_extract/Parrot_disco_2G.bin",
+        "dtype": "int16",
+        "block_size": 1024,
+        "gamma4_threshold": 3.0,
+        "gamma3_max": 0.5,
+        "min_blocks": 250,
+        "max_complex_samples": 120000000
+      },
+      {
+        "name": "studentt_gaussian",
+        "type": "student_t",
+        "nu": Infinity,
+        "n_blocks": 8000,
+        "block_size": 1024
+      }
+    ],
+    "monte_carlo": {
+      "snr_grid": [
+        -5,
+        0,
+        5,
+        10,
+        15
+      ],
+      "N_blocks_per_cell": 500,
+      "A_true_range": [
+        0.5,
+        2.0
+      ],
+      "N_calibration_blocks": 200,
+      "patp_alpha_grid": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0
+      ]
+    },
+    "estimators": [
+      "ols",
+      "pmm2",
+      "pmm3",
+      "auto",
+      "pmm_frac",
+      "auto_ext",
+      "patp"
+    ],
+    "output": {
+      "results_dir": "experiments/exp1b_heavy_tail/results_patp_real",
+      "figures_dir": "experiments/exp1b_heavy_tail/figures_patp_real"
+    }
+  },
+  "n_trials_total": 7500,
+  "oracle_available": true
+}

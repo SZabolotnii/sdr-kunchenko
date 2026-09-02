@@ -1,0 +1,29 @@
+2026-05-22 16:21:42,323 [INFO] Experiment: exp1b_patp_real | config: experiments/exp1b_heavy_tail/config_patp_real.yaml
+2026-05-22 16:21:42,323 [INFO] SNR grid: [-5.0, 0.0, 5.0, 10.0, 15.0] | blocks/cell: 500 | seed: 42
+2026-05-22 16:21:42,323 [INFO] --- Dataset: mavic_ocusync_heavytail ---
+2026-05-22 16:21:54,169 [INFO] iq_heavy_tail[DJI_mavic_pro_2G.bin]: scanned 234374 I/Q blocks, retained 661 leptokurtic (γ̂₄>3.00, |γ̂₃|<0.50)
+2026-05-22 16:21:54,173 [INFO] Generated 661 blocks × 1024 samples in 11.85s
+2026-05-22 16:21:54,203 [INFO] alpha_pool = 0.2250 (from 200 calibration blocks, elapsed 0.03s)
+2026-05-22 16:21:54,209 [INFO] MC trials: 2500 (across 5 SNR levels)
+2026-05-22 16:22:01,901 [INFO] MC done in 7.69s (0.0031 s/trial)
+2026-05-22 16:22:01,916 [INFO] [mavic_ocusync_heavytail] PATP α* = 0.00 (RE=1.026, p₂=0.500)
+2026-05-22 16:22:01,975 [INFO] Wrote /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_real/exp1b_patp_real_mavic_ocusync_heavytail.csv (2500 rows)
+2026-05-22 16:22:01,978 [INFO] --- Dataset: parrot_disco_heavytail ---
+2026-05-22 16:22:12,917 [INFO] iq_heavy_tail[Parrot_disco_2G.bin]: scanned 234374 I/Q blocks, retained 693 leptokurtic (γ̂₄>3.00, |γ̂₃|<0.50)
+2026-05-22 16:22:12,917 [INFO] Generated 693 blocks × 1024 samples in 10.94s
+2026-05-22 16:22:12,943 [INFO] alpha_pool = 0.2897 (from 200 calibration blocks, elapsed 0.03s)
+2026-05-22 16:22:12,955 [INFO] MC trials: 2500 (across 5 SNR levels)
+2026-05-22 16:22:18,376 [INFO] MC done in 5.42s (0.0022 s/trial)
+2026-05-22 16:22:18,389 [INFO] [parrot_disco_heavytail] PATP α* = 0.00 (RE=2.788, p₂=0.500)
+2026-05-22 16:22:18,446 [INFO] Wrote /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_real/exp1b_patp_real_parrot_disco_heavytail.csv (2500 rows)
+2026-05-22 16:22:18,447 [INFO] --- Dataset: studentt_gaussian ---
+2026-05-22 16:22:18,488 [INFO] Generated 8000 blocks × 1024 samples in 0.04s
+2026-05-22 16:22:18,514 [INFO] alpha_pool = 0.9933 (from 200 calibration blocks, elapsed 0.03s)
+2026-05-22 16:22:18,516 [INFO] MC trials: 2500 (across 5 SNR levels)
+2026-05-22 16:22:22,553 [INFO] MC done in 4.04s (0.0016 s/trial)
+2026-05-22 16:22:22,562 [INFO] [studentt_gaussian] PATP α* = 0.50 (RE=1.000, p₂=1.000)
+2026-05-22 16:22:22,626 [INFO] Wrote /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_real/exp1b_patp_real_studentt_gaussian.csv (2500 rows)
+2026-05-22 16:22:22,629 [INFO] Wrote summary: /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_real/exp1b_patp_real_summary.csv (120 rows)
+2026-05-22 16:22:22,630 [INFO] Wrote PATP sweep: /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_real/exp1b_patp_real_patp_sweep.csv (30 rows)
+2026-05-22 16:22:22,669 [INFO] Manifest: /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_real/exp1b_patp_real_manifest.json
+2026-05-22 16:22:23,421 [INFO] Embedded R ended.

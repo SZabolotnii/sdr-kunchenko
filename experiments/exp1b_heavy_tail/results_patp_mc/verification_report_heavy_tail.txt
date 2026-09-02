@@ -1,0 +1,51 @@
+================================================================================
+exp1b Verification Report
+Generated: 2026-05-22T13:28:37.626391+00:00
+Results dir: /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_mc
+Summary CSV: /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_mc/exp1b_patp_mc_summary.csv
+================================================================================
+
+Criterion: re_frac_heavy
+  Description: RE(PMM_FRAC | alpha_s <= 1.5) >= 1.5
+  Status: PASS
+  Value: 1.7592 (threshold: >= 1.5)
+  Datasets: alphastable_1p2, alphastable_1p5
+  Detail: Mean RE(PMM_FRAC) = 1.7592 over 10 rows (datasets: alphastable_1p2, alphastable_1p5)
+
+Criterion: re_frac_gaussian
+  Description: RE(PMM_FRAC | alpha_s = 2.0) >= 0.95
+  Status: PASS
+  Value: 1.0000 (threshold: >= 0.95)
+  Datasets: alphastable_2p0
+  Detail: Mean RE(PMM_FRAC) = 1.0000 over 5 rows (datasets: alphastable_2p0)
+
+Criterion: auto_ext_safety
+  Description: MSE(AUTO_EXT) <= MSE(OLS) x 1.05
+  Status: PASS
+  Value: 1.0000 (worst-case ratio) (threshold: <= 1.05 x MSE(OLS))
+  Datasets: alphastable_1p2, alphastable_1p5, alphastable_1p8, alphastable_2p0, studentt_gaussian, studentt_nu10, studentt_nu3, studentt_nu5
+  Detail: Worst-case MSE(AUTO_EXT)/MSE(OLS) = 1.0000 over 40 cells (datasets: alphastable_1p2, alphastable_1p5, alphastable_1p8, alphastable_2p0, studentt_gaussian, studentt_nu10, studentt_nu3, studentt_nu5)
+
+Criterion: re_patp_heavy
+  Description: RE(PATP* | heavy tails: alpha_s <= 1.5 or nu <= 3) >= 1.5
+  Status: PASS
+  Value: 1715.9209 (threshold: >= 1.5)
+  Datasets: alphastable_1p2, alphastable_1p5, studentt_nu3
+  Detail: Mean RE(PATP*) = 1715.9209 over 15 rows (datasets: alphastable_1p2, alphastable_1p5, studentt_nu3)
+
+Criterion: re_patp_gaussian
+  Description: RE(PATP* | Gaussian control) >= 0.95 (no harm)
+  Status: PASS
+  Value: 1.0000 (threshold: >= 0.95)
+  Datasets: alphastable_2p0, studentt_gaussian
+  Detail: Mean RE(PATP*) = 1.0000 over 10 rows (datasets: alphastable_2p0, studentt_gaussian)
+
+Criterion: baseline_ols_mse
+  Description: OLS MSE on realnoise = 3.28e-3 +/- 5% (constant from [exp1])
+  Status: SKIPPED
+  Value: N/A (threshold: 3.28e-3 +/- 5%)
+  Detail: SKIPPED (realnoise dataset not in exp1b scope)
+
+================================================================================
+OVERALL: PASS (5/5 criteria passed)
+================================================================================

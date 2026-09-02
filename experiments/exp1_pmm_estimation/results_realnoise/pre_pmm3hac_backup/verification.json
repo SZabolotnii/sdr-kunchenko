@@ -1,0 +1,86 @@
+{
+  "n_trials": 2500,
+  "checks": [
+    {
+      "id": "bias_pmm2",
+      "metric": "|Bias(PMM2)|",
+      "value": 0.00166562896737396,
+      "threshold": 0.01,
+      "pass": true,
+      "note": "Spec \u00a74.2 pass-criterion #1"
+    },
+    {
+      "id": "g_emp_vs_theory",
+      "metric": "|g_emp - g_theory| / g_theory (PMM2)",
+      "value": 0.07857574093473783,
+      "threshold": 0.05,
+      "pass": false,
+      "note": "g_emp=1.0700, g_theory_mean=0.9921"
+    },
+    {
+      "id": "coverage_pmm2",
+      "metric": "Coverage(95%) PMM2",
+      "value": 0.7208,
+      "threshold_lower": 0.93,
+      "threshold_upper": 0.97,
+      "pass": false
+    },
+    {
+      "id": "ols_hac_coverage",
+      "metric": "Coverage(95%) OLS+HAC",
+      "value": 0.924,
+      "threshold_lower": 0.9,
+      "threshold_upper": 0.97,
+      "pass": true,
+      "note": "HAC-SE closes the autocorrelation-induced under-coverage of naive OLS-SE."
+    },
+    {
+      "id": "pool_fixes_pmm2",
+      "metric": "MSE(PMM2_POOL) \u2264 MSE(OLS) (pooling closes per-block disaster)",
+      "value": 0.0032788301480007036,
+      "threshold": 0.003442454217578199,
+      "pass": true,
+      "note": "per-block PMM2 MSE=0.00351, pooled=0.00328, OLS=0.00328"
+    },
+    {
+      "id": "re_pmm2_asymmetric",
+      "metric": "RE(PMM2) when |\u03b3\u2083|>1",
+      "value": null,
+      "threshold": 1.2,
+      "pass": null,
+      "note": "INSUFFICIENT DATA (n=0 < 30)"
+    },
+    {
+      "id": "re_pmm3_platykurtic",
+      "metric": "RE(PMM3) when \u03b3\u2084<-0.7 & |\u03b3\u2083|<0.3",
+      "value": 1.7446165740777493,
+      "threshold": 1.2,
+      "pass": true,
+      "note": "n=551"
+    },
+    {
+      "id": "auto_not_worse",
+      "metric": "MSE(AUTO) \u2264 min(OLS, PMM2, PMM3)",
+      "value": 0.002957360208535781,
+      "threshold": 0.0028947632391627827,
+      "pass": false,
+      "note": "MSE: {'OLS': 0.0032785278262649513, 'PMM2': 0.0035079517298790422, 'PMM3': 0.0027569173706312217, 'AUTO': 0.002957360208535781}"
+    }
+  ],
+  "coverage_supplement": {
+    "OLS": 0.724,
+    "OLS_HAC": 0.924,
+    "PMM2": 0.7208,
+    "PMM2_HAC": 0.92,
+    "PMM3": 0.7252,
+    "AUTO": 0.7244,
+    "PMM2_POOL": 0.724,
+    "PMM3_POOL": 0.7288
+  },
+  "summary": {
+    "passed": 4,
+    "total": 8,
+    "skipped": 1,
+    "pass_rate": "4/7"
+  }
+}

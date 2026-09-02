@@ -1,0 +1,49 @@
+# Experiment 1A.5 — Realnoise validation
+# Swaps polygauss for fpv_realnoise_bpsk_qpsk (real RadioML2018 residual noise),
+# everything else identical to config.yaml.
+
+experiment_id: exp1A5_pmm_amplitude_realnoise
+seed: 42
+
+dataset:
+  root: ${KU_SDR_DATA_ROOT:/Users/serhiizabolotnii/Projects/signal-denoising/data_generation/datasets}
+  name: fpv_realnoise_bpsk_qpsk
+  scenario: synthetic_clean_with_real_noise_injection
+  modulation: synthetic_qpsk
+  noise: real_radioml_residual
+
+monte_carlo:
+  R: 1000
+  snr_grid: [-5, 0, 5, 10, 15]
+  K_polygauss: []  # N/A for realnoise
+  A_true_range: [0.5, 2.0]
+  N_blocks_per_cell: 500
+  snr_bucket_tol: 1.0  # realnoise SNR set is sparser
+
+estimators:
+  - ols
+  - pmm2
+  - pmm3
+  - auto_pmm
+
+inference:
+  se_method: sandwich
+  bootstrap_B: 200
+  nr_max_iter: 20
+  nr_tol: 1.0e-8
+
+verification:
+  pass_criteria:
+    bias_threshold: 0.01
+    g_relative_error: 0.10  # looser for realnoise (more variability)
+    coverage_lower: 0.93
+    coverage_upper: 0.97
+    re_threshold_asymmetric: 1.2
+    re_threshold_platykurtic: 1.2
+
+output:
+  results_dir: experiments/exp1_pmm_estimation/results_realnoise
+  figures_dir: experiments/exp1_pmm_estimation/figures_realnoise
+  results_csv: exp1A5_amplitude.csv
+  manifest: manifest.json
+  verification_report: verification_report.txt

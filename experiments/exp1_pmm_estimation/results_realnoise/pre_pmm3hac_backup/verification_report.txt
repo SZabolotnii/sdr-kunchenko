@@ -1,0 +1,17 @@
+# Exp 1A Verification Report
+
+**N trials:** 2500
+**Pass rate:** 4/7 (skipped: 1)
+
+| ID | Metric | Value | Threshold | Pass | Note |
+|---|---|---|---|---|---|
+| bias_pmm2 | |Bias(PMM2)| | 0.0017 | 0.0100 | ✓ | Spec §4.2 pass-criterion #1 |
+| g_emp_vs_theory | |g_emp - g_theory| / g_theory (PMM2) | 0.0786 | 0.0500 | ✗ | g_emp=1.0700, g_theory_mean=0.9921 |
+| coverage_pmm2 | Coverage(95%) PMM2 | 0.7208 | [0.93, 0.97] | ✗ |  |
+| ols_hac_coverage | Coverage(95%) OLS+HAC | 0.9240 | [0.9, 0.97] | ✓ | HAC-SE closes the autocorrelation-induced under-coverage of naive OLS-SE. |
+| pool_fixes_pmm2 | MSE(PMM2_POOL) ≤ MSE(OLS) (pooling closes per-block disaster) | 0.0033 | 0.0034 | ✓ | per-block PMM2 MSE=0.00351, pooled=0.00328, OLS=0.00328 |
+| re_pmm2_asymmetric | RE(PMM2) when |γ₃|>1 | — | 1.2000 | — | INSUFFICIENT DATA (n=0 < 30) |
+| re_pmm3_platykurtic | RE(PMM3) when γ₄<-0.7 & |γ₃|<0.3 | 1.7446 | 1.2000 | ✓ | n=551 |
+| auto_not_worse | MSE(AUTO) ≤ min(OLS, PMM2, PMM3) | 0.0030 | 0.0029 | ✗ | MSE: {'OLS': 0.0032785278262649513, 'PMM2': 0.0035079517298790422, 'PMM3': 0.0027569173706312217, 'AUTO': 0.002957360208535781} |
+
+**Coverage (all methods):** OLS=0.724, OLS_HAC=0.924, PMM2=0.721, PMM2_HAC=0.920, PMM3=0.725, AUTO=0.724, PMM2_POOL=0.724, PMM3_POOL=0.729

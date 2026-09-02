@@ -1,0 +1,47 @@
+experiment_id: exp1b_patp_real
+seed: 42
+
+# Real-RF heavy-tail validation of the PATP fractional branch.
+# Source: Tampere DJI OcuSync over-the-air I/Q recordings (int16 interleaved).
+# Impulsive burst onsets yield genuinely leptokurtic blocks (γ̂₄ > 1); these are
+# the empirical heavy-tail regime the classical integer-power PMM cannot serve.
+
+datasets:
+  - name: mavic_ocusync_heavytail
+    type: iq_heavy_tail
+    iq_path: data/tampere_extract/DJI_mavic_pro_2G.bin
+    dtype: int16
+    block_size: 1024
+    gamma4_threshold: 3.0   # genuinely impulsive blocks (median γ̂₄ ≈ 6.8)
+    gamma3_max: 0.5
+    min_blocks: 250
+    max_complex_samples: 120000000
+  # Second, independent real source (different vendor) — cross-source robustness.
+  - name: parrot_disco_heavytail
+    type: iq_heavy_tail
+    iq_path: data/tampere_extract/Parrot_disco_2G.bin
+    dtype: int16
+    block_size: 1024
+    gamma4_threshold: 3.0   # 696 blocks, median γ̂₄ ≈ 5.5
+    gamma3_max: 0.5
+    min_blocks: 250
+    max_complex_samples: 120000000
+  # Gaussian control: same pipeline, synthetic Gaussian → PATP must not harm OLS.
+  - name: studentt_gaussian
+    type: student_t
+    nu: .inf
+    n_blocks: 8000
+    block_size: 1024
+
+monte_carlo:
+  snr_grid: [-5, 0, 5, 10, 15]
+  N_blocks_per_cell: 500
+  A_true_range: [0.5, 2.0]
+  N_calibration_blocks: 200
+  patp_alpha_grid: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+
+estimators: [ols, pmm2, pmm3, auto, pmm_frac, auto_ext, patp]
+
+output:
+  results_dir: experiments/exp1b_heavy_tail/results_patp_real
+  figures_dir: experiments/exp1b_heavy_tail/figures_patp_real

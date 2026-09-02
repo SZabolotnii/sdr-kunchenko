@@ -1,0 +1,103 @@
+{
+  "experiment_id": "exp1A5_pmm_amplitude_realnoise",
+  "git_sha": "4b65b4675f2ad23360c76d19f57b9bfe4909e1bf",
+  "timestamp_utc": "2026-04-25T14:25:57.773592+00:00",
+  "python": "3.11.12",
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "estempmm_version": "[1] \u20180.3.1\u2019",
+  "dataset": {
+    "name": "fpv_realnoise_bpsk_qpsk",
+    "root": "/Users/serhiizabolotnii/Projects/signal-denoising/data_generation/datasets/fpv_realnoise_bpsk_qpsk",
+    "n_train": 100000,
+    "block_size": 1024,
+    "config": {
+      "uid": "692e429b",
+      "created_at": "2026-04-25T09:20:40",
+      "scenario": "synthetic_clean_with_real_noise_injection",
+      "synthetic_source": "fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8",
+      "noise_bank_source": "radioml2018_bpsk_qpsk_fpv",
+      "block_size": 1024,
+      "sample_rate": 8192,
+      "modulation_type": "synthetic_qpsk",
+      "noise_types": [
+        "real_radioml_residual"
+      ],
+      "snr_range": [
+        -5.0,
+        18.0
+      ],
+      "test_snr_points": [
+        -5,
+        0,
+        5,
+        10,
+        15,
+        18
+      ],
+      "samples_per_snr": 500,
+      "num_train": 100000,
+      "seed": 42,
+      "notes": "Phase B5: synthetic clean signals from `synthetic_source` paired with real-noise samples drawn from `noise_bank_source` (non_gaussian_noise_only.npy). Preserves correct (clean, noisy) supervision while exposing model to real RF channel noise statistics. See experiments/REAL_DATA_STATUS.md \u00a72."
+    }
+  },
+  "config": {
+    "experiment_id": "exp1A5_pmm_amplitude_realnoise",
+    "seed": 42,
+    "dataset": {
+      "root": "${KU_SDR_DATA_ROOT:/Users/serhiizabolotnii/Projects/signal-denoising/data_generation/datasets}",
+      "name": "fpv_realnoise_bpsk_qpsk",
+      "scenario": "synthetic_clean_with_real_noise_injection",
+      "modulation": "synthetic_qpsk",
+      "noise": "real_radioml_residual"
+    },
+    "monte_carlo": {
+      "R": 1000,
+      "snr_grid": [
+        -5,
+        0,
+        5,
+        10,
+        15
+      ],
+      "K_polygauss": [],
+      "A_true_range": [
+        0.5,
+        2.0
+      ],
+      "N_blocks_per_cell": 500,
+      "snr_bucket_tol": 1.0
+    },
+    "estimators": [
+      "ols",
+      "pmm2",
+      "pmm3",
+      "auto_pmm"
+    ],
+    "inference": {
+      "se_method": "sandwich",
+      "bootstrap_B": 200,
+      "nr_max_iter": 20,
+      "nr_tol": 1e-08
+    },
+    "verification": {
+      "pass_criteria": {
+        "bias_threshold": 0.01,
+        "g_relative_error": 0.1,
+        "coverage_lower": 0.93,
+        "coverage_upper": 0.97,
+        "re_threshold_asymmetric": 1.2,
+        "re_threshold_platykurtic": 1.2
+      }
+    },
+    "output": {
+      "results_dir": "experiments/exp1_pmm_estimation/results_realnoise",
+      "figures_dir": "experiments/exp1_pmm_estimation/figures_realnoise",
+      "results_csv": "exp1A5_amplitude.csv",
+      "manifest": "manifest.json",
+      "verification_report": "verification_report.txt"
+    }
+  },
+  "n_trials_run": 2500,
+  "elapsed_sec": 11.07228708267212,
+  "data_root_env": "/Users/serhiizabolotnii/Projects/signal-denoising/data_generation/datasets"
+}

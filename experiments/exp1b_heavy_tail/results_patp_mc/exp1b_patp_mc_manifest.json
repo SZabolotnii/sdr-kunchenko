@@ -1,0 +1,121 @@
+{
+  "experiment_id": "exp1b_patp_mc",
+  "git_sha": "37afc720ef776b024857676cf317c8ca4fefcdec",
+  "timestamp_utc": "2026-08-30T17:36:04.716284+00:00",
+  "python": "3.12.10",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "config": {
+    "experiment_id": "exp1b_patp_mc",
+    "seed": 42,
+    "datasets": [
+      {
+        "name": "alphastable_1p2",
+        "type": "alpha_stable",
+        "alpha_s": 1.2,
+        "n_blocks": 8000,
+        "block_size": 1024
+      },
+      {
+        "name": "alphastable_1p5",
+        "type": "alpha_stable",
+        "alpha_s": 1.5,
+        "n_blocks": 8000,
+        "block_size": 1024
+      },
+      {
+        "name": "alphastable_1p8",
+        "type": "alpha_stable",
+        "alpha_s": 1.8,
+        "n_blocks": 8000,
+        "block_size": 1024
+      },
+      {
+        "name": "alphastable_2p0",
+        "type": "alpha_stable",
+        "alpha_s": 2.0,
+        "n_blocks": 8000,
+        "block_size": 1024
+      },
+      {
+        "name": "studentt_nu3",
+        "type": "student_t",
+        "nu": 3,
+        "n_blocks": 8000,
+        "block_size": 1024
+      },
+      {
+        "name": "studentt_nu5",
+        "type": "student_t",
+        "nu": 5,
+        "n_blocks": 8000,
+        "block_size": 1024
+      },
+      {
+        "name": "studentt_nu10",
+        "type": "student_t",
+        "nu": 10,
+        "n_blocks": 8000,
+        "block_size": 1024
+      },
+      {
+        "name": "studentt_gaussian",
+        "type": "student_t",
+        "nu": Infinity,
+        "n_blocks": 8000,
+        "block_size": 1024
+      }
+    ],
+    "monte_carlo": {
+      "snr_grid": [
+        -5,
+        0,
+        5,
+        10,
+        15
+      ],
+      "N_blocks_per_cell": 500,
+      "A_true_range": [
+        0.5,
+        2.0
+      ],
+      "N_calibration_blocks": 200,
+      "patp_alpha_grid": [
+        0.0,
+        0.1,
+        0.2,
+        0.3,
+        0.4,
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9,
+        1.0
+      ]
+    },
+    "estimators": [
+      "ols",
+      "pmm2",
+      "pmm3",
+      "auto",
+      "pmm_frac",
+      "auto_ext",
+      "patp"
+    ],
+    "verification": {
+      "pass_criteria": {
+        "re_frac_heavy": 1.5,
+        "re_frac_gaussian": 0.95,
+        "auto_ext_safety": 1.05,
+        "re_patp_heavy": 1.5,
+        "re_patp_gaussian": 0.95
+      }
+    },
+    "output": {
+      "results_dir": "experiments/exp1b_heavy_tail/results_patp_mc",
+      "figures_dir": "experiments/exp1b_heavy_tail/figures_patp_mc"
+    }
+  },
+  "n_trials_total": 20000,
+  "oracle_available": true
+}

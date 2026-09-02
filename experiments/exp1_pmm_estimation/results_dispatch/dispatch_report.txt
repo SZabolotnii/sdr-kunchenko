@@ -1,0 +1,75 @@
+# Exp 1A — dispatcher audit (AUTO vs oracle-best)
+
+## polygauss  (experiments/exp1_pmm_estimation/results/exp1A_amplitude.csv, n=2500, N=1024)
+rule re-implementation matches `method_auto`: 100.0%; paper-as-written rule matches: 96.4%
+
+MSE:    OLS=6.770e-04, PMM2=1.877e-02, PMM3=7.544e-04, AUTO=7.271e-03
+medSE:  OLS=8.133e-05, PMM2=2.354e-04, PMM3=8.320e-05, AUTO=1.113e-04
+top-10-block share of ΣSE: OLS=0.095, PMM2=0.427, PMM3=0.132, AUTO=0.559
+MSE(oracle per-block)=4.493e-04, MSE(oracle per γ̂₄-bin)=6.445e-04
+regret vs per-block oracle = 16.1856 [9.7946; 24.2402]
+regret vs per-γ̂₄-bin oracle = 11.2828
+median-based regret vs per-block oracle = 3.2633
+MSE(AUTO)/MSE(OLS) = 10.7405, medSE(AUTO)/medSE(OLS) = 1.3683
+constant-policy regret (no dispatch): OLS=1.507, PMM2=41.790, PMM3=1.679, AUTO=16.186
+misclassification rate = 65.0%
+
+confusion (rows = AUTO, cols = oracle-best):
+| AUTO \ oracle | OLS | PMM2 | PMM3 |
+|---|---|---|---|
+| OLS | 423 | 312 | 403 |
+| PMM2 | 426 | 362 | 408 |
+| PMM3 | 46 | 29 | 91 |
+
+k(paper): skew=3.919, kurt=4.572; k*=8.00 (regret 7.3980); k*_median=6.75 (median regret 2.8690)
+
+misclassification by γ̂₄ decile:
+| γ̂₄ bin | n | misclass | regret |
+|---|---|---|---|
+| (-1.6989999999999998, -0.682] | 250 | 56.0% | 66.504 |
+| (-0.682, -0.364] | 250 | 70.0% | 3.697 |
+| (-0.364, -0.17] | 250 | 66.4% | 10.993 |
+| (-0.17, -0.0263] | 250 | 69.2% | 3.064 |
+| (-0.0263, 0.136] | 250 | 65.2% | 18.937 |
+| (0.136, 0.317] | 250 | 62.8% | 13.426 |
+| (0.317, 0.597] | 250 | 63.2% | 6.106 |
+| (0.597, 1.04] | 250 | 65.6% | 23.433 |
+| (1.04, 2.015] | 250 | 69.2% | 25.135 |
+| (2.015, 24.96] | 250 | 62.0% | 44.004 |
+
+## realnoise  (experiments/exp1_pmm_estimation/results_realnoise/exp1A5_amplitude.csv, n=2500, N=1024)
+rule re-implementation matches `method_auto`: 100.0%; paper-as-written rule matches: 99.9%
+
+MSE:    OLS=3.279e-03, PMM2=3.508e-03, PMM3=2.757e-03, AUTO=2.957e-03
+medSE:  OLS=3.097e-04, PMM2=3.300e-04, PMM3=2.580e-04, AUTO=2.812e-04
+top-10-block share of ΣSE: OLS=0.124, PMM2=0.122, PMM3=0.141, AUTO=0.136
+MSE(oracle per-block)=2.425e-03, MSE(oracle per γ̂₄-bin)=2.752e-03
+regret vs per-block oracle = 1.2197 [1.1876; 1.2607]
+regret vs per-γ̂₄-bin oracle = 1.0747
+median-based regret vs per-block oracle = 1.7229
+MSE(AUTO)/MSE(OLS) = 0.9020, medSE(AUTO)/medSE(OLS) = 0.9081
+constant-policy regret (no dispatch): OLS=1.352, PMM2=1.447, PMM3=1.137, AUTO=1.220
+misclassification rate = 69.9%
+
+confusion (rows = AUTO, cols = oracle-best):
+| AUTO \ oracle | OLS | PMM2 | PMM3 |
+|---|---|---|---|
+| OLS | 414 | 591 | 922 |
+| PMM2 | 3 | 4 | 15 |
+| PMM3 | 116 | 100 | 335 |
+
+k(paper): skew=3.919, kurt=4.572; k*=3.25 (regret 1.1655); k*_median=2.75 (median regret 1.6083)
+
+misclassification by γ̂₄ decile:
+| γ̂₄ bin | n | misclass | regret |
+|---|---|---|---|
+| (-1.599, -0.926] | 250 | 35.6% | 1.340 |
+| (-0.926, -0.73] | 250 | 44.8% | 1.474 |
+| (-0.73, -0.63] | 250 | 67.2% | 1.393 |
+| (-0.63, -0.545] | 250 | 80.0% | 1.437 |
+| (-0.545, -0.464] | 250 | 76.8% | 1.248 |
+| (-0.464, -0.386] | 250 | 83.2% | 1.208 |
+| (-0.386, -0.31] | 250 | 80.4% | 1.129 |
+| (-0.31, -0.225] | 250 | 78.0% | 1.082 |
+| (-0.225, -0.123] | 250 | 80.0% | 1.064 |
+| (-0.123, 0.527] | 250 | 72.8% | 1.057 |

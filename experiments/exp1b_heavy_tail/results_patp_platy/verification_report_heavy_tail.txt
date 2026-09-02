@@ -1,0 +1,48 @@
+================================================================================
+exp1b Verification Report
+Generated: 2026-05-22T13:28:37.803172+00:00
+Results dir: /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_platy
+Summary CSV: /Users/docua/Project/Research/sdr-kunchenko/experiments/exp1b_heavy_tail/results_patp_platy/exp1b_patp_platy_summary.csv
+================================================================================
+
+Criterion: re_frac_heavy
+  Description: RE(PMM_FRAC | alpha_s <= 1.5) >= 1.5
+  Status: SKIPPED
+  Value: N/A (threshold: >= 1.5)
+  Detail: No rows matching alpha_s ≤ 1.5 datasets with PMM_FRAC found in summary CSV.
+
+Criterion: re_frac_gaussian
+  Description: RE(PMM_FRAC | alpha_s = 2.0) >= 0.95
+  Status: SKIPPED
+  Value: N/A (threshold: >= 0.95)
+  Detail: No rows matching alpha_s = 2.0 dataset with PMM_FRAC found in summary CSV.
+
+Criterion: auto_ext_safety
+  Description: MSE(AUTO_EXT) <= MSE(OLS) x 1.05
+  Status: PASS
+  Value: 1.0000 (worst-case ratio) (threshold: <= 1.05 x MSE(OLS))
+  Datasets: beta2_2, gaussian, gennorm_b4, uniform
+  Detail: Worst-case MSE(AUTO_EXT)/MSE(OLS) = 1.0000 over 20 cells (datasets: beta2_2, gaussian, gennorm_b4, uniform)
+
+Criterion: re_patp_heavy
+  Description: RE(PATP* | heavy tails: alpha_s <= 1.5 or nu <= 3) >= 1.5
+  Status: SKIPPED
+  Value: N/A (threshold: >= 1.5)
+  Detail: No PATP* rows for heavy-tail datasets in summary CSV.
+
+Criterion: re_patp_gaussian
+  Description: RE(PATP* | Gaussian control) >= 0.95 (no harm)
+  Status: PASS
+  Value: 1.0000 (threshold: >= 0.95)
+  Datasets: gaussian
+  Detail: Mean RE(PATP*) = 1.0000 over 5 rows (datasets: gaussian)
+
+Criterion: baseline_ols_mse
+  Description: OLS MSE on realnoise = 3.28e-3 +/- 5% (constant from [exp1])
+  Status: SKIPPED
+  Value: N/A (threshold: 3.28e-3 +/- 5%)
+  Detail: SKIPPED (realnoise dataset not in exp1b scope)
+
+================================================================================
+OVERALL: PASS (2/2 criteria passed)
+================================================================================

@@ -1,0 +1,114 @@
+{
+  "experiment_id": "exp1A_pmm_amplitude",
+  "git_sha": "37afc720ef776b024857676cf317c8ca4fefcdec",
+  "timestamp_utc": "2026-08-30T20:01:31.178132+00:00",
+  "python": "3.12.10",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "estempmm_version": "[1] \u20180.4.0\u2019",
+  "dataset": {
+    "name": "fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8",
+    "root": "/Users/serhiizabolotnii/Projects/signal-denoising/data_generation/datasets/fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8",
+    "n_train": 100000,
+    "block_size": 1024,
+    "config": {
+      "uid": "953c56e8",
+      "created_at": "2026-04-19T19:34:52",
+      "folder": "fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8",
+      "scenario": "fpv_telemetry",
+      "modulation_type": "qpsk",
+      "bits_per_symbol": 2,
+      "block_size": 1024,
+      "sample_rate": 8192,
+      "snr_range": [
+        -5.0,
+        15.0
+      ],
+      "noise_types": [
+        "polygauss"
+      ],
+      "mix_mode": "fixed",
+      "polygauss_components": 3,
+      "polygauss_random_k": null,
+      "num_train": 100000,
+      "test_snr_points": [
+        -5,
+        -2,
+        0,
+        3,
+        5,
+        8,
+        10,
+        12,
+        15,
+        18
+      ],
+      "samples_per_snr": 10000
+    }
+  },
+  "config": {
+    "experiment_id": "exp1A_pmm_amplitude",
+    "seed": 42,
+    "dataset": {
+      "root": "${KU_SDR_DATA_ROOT:/Users/serhiizabolotnii/Projects/signal-denoising/data_generation/datasets}",
+      "name": "fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8",
+      "scenario": "fpv_telemetry",
+      "modulation": "qpsk",
+      "noise": "polygauss"
+    },
+    "monte_carlo": {
+      "R": 1000,
+      "snr_grid": [
+        -5,
+        0,
+        5,
+        10,
+        15
+      ],
+      "K_polygauss": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "A_true_range": [
+        0.5,
+        2.0
+      ],
+      "N_blocks_per_cell": 500
+    },
+    "estimators": [
+      "ols",
+      "mle_gaussian",
+      "pmm2",
+      "pmm3",
+      "auto_pmm"
+    ],
+    "inference": {
+      "se_method": "sandwich",
+      "bootstrap_B": 200,
+      "nr_max_iter": 20,
+      "nr_tol": 1e-08
+    },
+    "verification": {
+      "pass_criteria": {
+        "bias_threshold": 0.01,
+        "g_relative_error": 0.05,
+        "coverage_lower": 0.93,
+        "coverage_upper": 0.97,
+        "re_threshold_asymmetric": 1.2,
+        "re_threshold_platykurtic": 1.2
+      }
+    },
+    "output": {
+      "results_dir": "experiments/exp1_pmm_estimation/results",
+      "figures_dir": "experiments/exp1_pmm_estimation/figures",
+      "results_csv": "exp1A_amplitude.csv",
+      "manifest": "manifest.json",
+      "verification_report": "verification_report.txt"
+    }
+  },
+  "n_trials_run": 2500,
+  "elapsed_sec": 9.619112014770508,
+  "data_root_env": "/Users/serhiizabolotnii/Projects/signal-denoising/data_generation/datasets"
+}

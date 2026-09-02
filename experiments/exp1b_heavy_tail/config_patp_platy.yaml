@@ -1,0 +1,44 @@
+experiment_id: exp1b_patp_platy
+seed: 42
+
+# Platykurtic (short-tailed, γ4<0) power-edge of the PATP family.
+# Here the winning member is the integer-power cubic PMM3 (NOT the fractional
+# branch): this run confirms that platykurtic noise needs the power edge while
+# the fractal edge (α→0) HURTS — the mirror image of the heavy-tail result.
+
+datasets:
+  - name: uniform
+    type: platykurtic
+    kind: uniform           # γ4 = -1.2
+    n_blocks: 8000
+    block_size: 1024
+  - name: beta2_2
+    type: platykurtic
+    kind: beta
+    shape: 2.0              # Beta(2,2), γ4 = -6/7 ≈ -0.86
+    n_blocks: 8000
+    block_size: 1024
+  - name: gennorm_b4
+    type: platykurtic
+    kind: gennorm
+    shape: 4.0              # exponential-power β=4, platykurtic
+    n_blocks: 8000
+    block_size: 1024
+  - name: gaussian
+    type: student_t
+    nu: .inf               # Gaussian control
+    n_blocks: 8000
+    block_size: 1024
+
+monte_carlo:
+  snr_grid: [-5, 0, 5, 10, 15]
+  N_blocks_per_cell: 500
+  A_true_range: [0.5, 2.0]
+  N_calibration_blocks: 200
+  patp_alpha_grid: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5]
+
+estimators: [ols, pmm2, pmm3, auto, pmm_frac, auto_ext, patp]
+
+output:
+  results_dir: experiments/exp1b_heavy_tail/results_patp_platy
+  figures_dir: experiments/exp1b_heavy_tail/figures_patp_platy
