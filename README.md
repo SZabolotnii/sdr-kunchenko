@@ -87,10 +87,14 @@ full configuration), `verify.py` (pass-criteria check), `plot.py` (figures).
 | Tables 3, 4, S1 — PATP α-transition | `python experiments/exp1b_heavy_tail/run.py --config experiments/exp1b_heavy_tail/config_patp_{mc,platy,real}.yaml` | `results_patp_{mc,platy,real}/` |
 | Tables 3–5 — median/trimmed RE with block-bootstrap CI | `python experiments/exp1b_heavy_tail/robust_re.py` | `results_robust_re/robust_re.csv` |
 | Figures 1–3 | `plot.py` (add `--csv results_realnoise/exp1A5_amplitude.csv --fig-dir figures_realnoise` for Figs. 2–3) | `figures/`, `figures_realnoise/` |
+| Pass-criteria reports | `python experiments/exp1_pmm_estimation/verify.py` (add `--csv .../results_realnoise/exp1A5_amplitude.csv` for the real-noise run); `python experiments/exp1b_heavy_tail/verify.py --results-dir experiments/exp1b_heavy_tail/results_patp_mc/` (likewise `_platy`, `_real`) | `verification_report*.txt` |
 
-`results{,_realnoise}/pre_pmm3hac_backup/` holds the pre-revision run, kept so that the
-response letter's claim — published MSE values are bit-identical after adding the PMM3 HAC
-standard error — can be checked directly.
+Run from the repository root. The reports read 3/8 for Exp 1 on polygaussian noise and 4/7
+on real noise; the article does not hide this — §5 and §6 are largely an account of which
+criteria fail and why, and the PATP track (5/5, 2/2, 2/2) is where the positive results
+are. `results{,_realnoise}/pre_pmm3hac_backup/` holds the pre-revision run, kept so that
+the response letter's claim — published MSE values are bit-identical after adding the PMM3
+HAC standard error — can be checked directly.
 
 ### RIC — DSGE features for noise-type classification (Exp 3)
 
