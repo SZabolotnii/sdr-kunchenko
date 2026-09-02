@@ -1,0 +1,29 @@
+Grayscale readability check — exp3 figures
+==========================================
+
+Fig. 1 (fig3_dsge_vs_spectral.pdf): PASS — contrast=239.0/255 (≥30), luminance range [0–239], 27 significant luminance levels
+  Description: Scatter: DSGE vs Spectral accuracy — distinct markers per SNR
+
+Fig. 2 (fig3_basis_comparison_bar.pdf): PASS — contrast=239.0/255 (≥30), luminance range [0–239], 9 significant luminance levels
+  Description: Bar chart: 5 bases × 3 feature types — distinct hatches
+
+Fig. 3 (fig3_patp_alpha_sweep.pdf): PASS — contrast=239.0/255 (≥30), luminance range [0–239], 13 significant luminance levels
+  Description: Line: accuracy vs α for 5 SNR — distinct markers + linestyles
+
+Fig. 4 (fig3_alpha_optimal_per_snr.pdf): PASS — contrast=239.0/255 (≥30), luminance range [0–239], 3 significant luminance levels
+  Description: Line: α* per SNR — single series, reference lines
+
+Fig. 5 (fig3_accuracy_vs_snr.pdf): PASS — contrast=239.0/255 (≥30), luminance range [0–239], 11 significant luminance levels
+  Description: Line: accuracy vs SNR for 3 feature types — distinct markers + linestyles
+
+Overall: 5/5 PASS
+Action taken: regenerated figures with improved markers/linestyles/hatches
+
+Grayscale improvements applied to plot.py:
+  - Distinct markers: o, s, ^, D, v per series
+  - Distinct linestyles: solid, dashed, dotted, dash-dot per series
+  - Distinct gray shades: 0.0, 0.35, 0.55, 0.70, 0.85
+  - Bar chart: hatch patterns (none, ///, ..., xxx, \\\) per group
+  - Scatter: replaced viridis colormap with per-SNR markers + gray shades
+
+Grayscale PNG files saved to: /Users/docua/Project/Research/sdr-kunchenko/experiments/exp3_dsge_classification/figures/grayscale_check

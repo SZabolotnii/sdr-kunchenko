@@ -1,0 +1,218 @@
+{
+  "task2": {
+    "spectral_only": {
+      "accuracy": 0.9466666666666667,
+      "macro_f1": 0.9465145302192903,
+      "feature_dim": 15,
+      "predictions": "[1 1 1 ... 0 0 0]"
+    },
+    "variants": {
+      "poly + spec": {
+        "accuracy": 0.9491666666666667,
+        "macro_f1": 0.9490349716176314,
+        "feature_dim": 19,
+        "bootstrap_vs_spectral": {
+          "delta": 0.0025204413983410667,
+          "p_value": 0.092,
+          "ci_low": 0.0,
+          "ci_high": 0.005865746950068235,
+          "significant": false,
+          "metric": "macro_f1",
+          "R": 500
+        }
+      },
+      "frac + spec": {
+        "accuracy": 0.9983333333333333,
+        "macro_f1": 0.9983333333333333,
+        "feature_dim": 19,
+        "bootstrap_vs_spectral": {
+          "delta": 0.051818803114042966,
+          "p_value": 0.0,
+          "ci_low": 0.038542012361713326,
+          "ci_high": 0.06475511598904493,
+          "significant": true,
+          "metric": "macro_f1",
+          "R": 500
+        }
+      },
+      "trig + spec": {
+        "accuracy": 0.9983333333333333,
+        "macro_f1": 0.9983333333333333,
+        "feature_dim": 19,
+        "bootstrap_vs_spectral": {
+          "delta": 0.051818803114042966,
+          "p_value": 0.0,
+          "ci_low": 0.038542012361713326,
+          "ci_high": 0.06475511598904493,
+          "significant": true,
+          "metric": "macro_f1",
+          "R": 500
+        }
+      },
+      "poly + frac + spec": {
+        "accuracy": 0.9983333333333333,
+        "macro_f1": 0.9983333333333333,
+        "feature_dim": 23,
+        "bootstrap_vs_spectral": {
+          "delta": 0.051818803114042966,
+          "p_value": 0.0,
+          "ci_low": 0.038542012361713326,
+          "ci_high": 0.06475511598904493,
+          "significant": true,
+          "metric": "macro_f1",
+          "R": 500
+        }
+      },
+      "all 4 bases + spec": {
+        "accuracy": 0.9991666666666666,
+        "macro_f1": 0.9991666660879626,
+        "feature_dim": 31,
+        "bootstrap_vs_spectral": {
+          "delta": 0.052652135868672234,
+          "p_value": 0.0,
+          "ci_low": 0.039668947486971216,
+          "ci_high": 0.06566965474033831,
+          "significant": true,
+          "metric": "macro_f1",
+          "R": 500
+        }
+      },
+      "frac alone (no spec)": {
+        "accuracy": 0.5225,
+        "macro_f1": 0.4487199736386165,
+        "feature_dim": 4,
+        "bootstrap_vs_spectral": {
+          "delta": -0.49779455658067384,
+          "p_value": 0.0,
+          "ci_low": -0.5356996024609243,
+          "ci_high": -0.457826427845441,
+          "significant": false,
+          "metric": "macro_f1",
+          "R": 500
+        }
+      },
+      "poly + frac (no spec)": {
+        "accuracy": 0.5325,
+        "macro_f1": 0.47760458578125353,
+        "feature_dim": 8,
+        "bootstrap_vs_spectral": {
+          "delta": -0.4689099444380368,
+          "p_value": 0.0,
+          "ci_low": -0.5062441365592745,
+          "ci_high": -0.43087040655943365,
+          "significant": false,
+          "metric": "macro_f1",
+          "R": 500
+        }
+      }
+    }
+  },
+  "task3": {
+    "spectral_only": {
+      "accuracy": 0.955,
+      "macro_f1": 0.9549086900974473,
+      "feature_dim": 15,
+      "predictions": "[1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0\n 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\n 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\n 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\n 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\n 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\n 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\n 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\n 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\n 1 1 1 1 1 1 1 1]"
+    },
+    "variants": {
+      "poly + spec": {
+        "accuracy": 0.955,
+        "macro_f1": 0.9549086900974473,
+        "feature_dim": 19,
+        "bootstrap_vs_spectral": {
+          "delta": 0.0,
+          "p_value": 2.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "significant": false,
+          "metric": "macro_f1",
+          "R": 500
+        }
+      },
+      "frac + spec": {
+        "accuracy": 0.955,
+        "macro_f1": 0.9549086900974473,
+        "feature_dim": 19,
+        "bootstrap_vs_spectral": {
+          "delta": 0.0,
+          "p_value": 2.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "significant": false,
+          "metric": "macro_f1",
+          "R": 500
+        }
+      },
+      "trig + spec": {
+        "accuracy": 0.955,
+        "macro_f1": 0.9549086900974473,
+        "feature_dim": 19,
+        "bootstrap_vs_spectral": {
+          "delta": 0.0,
+          "p_value": 2.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "significant": false,
+          "metric": "macro_f1",
+          "R": 500
+        }
+      },
+      "poly + frac + spec": {
+        "accuracy": 0.955,
+        "macro_f1": 0.9549086900974473,
+        "feature_dim": 23,
+        "bootstrap_vs_spectral": {
+          "delta": 0.0,
+          "p_value": 2.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "significant": false,
+          "metric": "macro_f1",
+          "R": 500
+        }
+      },
+      "all 4 bases + spec": {
+        "accuracy": 0.955,
+        "macro_f1": 0.9549086900974473,
+        "feature_dim": 31,
+        "bootstrap_vs_spectral": {
+          "delta": 0.0,
+          "p_value": 2.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "significant": false,
+          "metric": "macro_f1",
+          "R": 500
+        }
+      },
+      "frac alone (no spec)": {
+        "accuracy": 0.5466666666666666,
+        "macro_f1": 0.5090902527944556,
+        "feature_dim": 4,
+        "bootstrap_vs_spectral": {
+          "delta": -0.44581843730299164,
+          "p_value": 0.0,
+          "ci_low": -0.49245584030226924,
+          "ci_high": -0.4022208397656426,
+          "significant": false,
+          "metric": "macro_f1",
+          "R": 500
+        }
+      },
+      "poly + frac (no spec)": {
+        "accuracy": 0.6416666666666667,
+        "macro_f1": 0.615328417091346,
+        "feature_dim": 8,
+        "bootstrap_vs_spectral": {
+          "delta": -0.3395802730061013,
+          "p_value": 0.0,
+          "ci_low": -0.3849433948144922,
+          "ci_high": -0.2983217367117774,
+          "significant": false,
+          "metric": "macro_f1",
+          "R": 500
+        }
+      }
+    }
+  }
+}

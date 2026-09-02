@@ -1,0 +1,139 @@
+{
+  "task": "Task 2 \u2014 DJI vs non-DJI, complementarity-aware PATP \u03b1-sweep",
+  "spectral_baseline": {
+    "accuracy": 0.9466666666666667,
+    "macro_f1": 0.9465145302192903
+  },
+  "alphas": [
+    0.0,
+    0.1,
+    0.2,
+    0.30000000000000004,
+    0.4,
+    0.5,
+    0.6000000000000001,
+    0.7000000000000001,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "per_alpha": [
+    {
+      "alpha": 0.0,
+      "accuracy": 0.9983333333333333,
+      "macro_f1": 0.9983333333333333,
+      "delta_vs_spectral": 0.051818803114042966,
+      "p_value": 0.0,
+      "ci_low": 0.038542012361713326,
+      "ci_high": 0.06475511598904493,
+      "significant": true
+    },
+    {
+      "alpha": 0.1,
+      "accuracy": 0.9983333333333333,
+      "macro_f1": 0.9983333333333333,
+      "delta_vs_spectral": 0.051818803114042966,
+      "p_value": 0.0,
+      "ci_low": 0.038542012361713326,
+      "ci_high": 0.06475511598904493,
+      "significant": true
+    },
+    {
+      "alpha": 0.2,
+      "accuracy": 0.9983333333333333,
+      "macro_f1": 0.9983333333333333,
+      "delta_vs_spectral": 0.051818803114042966,
+      "p_value": 0.0,
+      "ci_low": 0.038542012361713326,
+      "ci_high": 0.06475511598904493,
+      "significant": true
+    },
+    {
+      "alpha": 0.30000000000000004,
+      "accuracy": 0.9983333333333333,
+      "macro_f1": 0.9983333333333333,
+      "delta_vs_spectral": 0.051818803114042966,
+      "p_value": 0.0,
+      "ci_low": 0.038542012361713326,
+      "ci_high": 0.06475511598904493,
+      "significant": true
+    },
+    {
+      "alpha": 0.4,
+      "accuracy": 0.9983333333333333,
+      "macro_f1": 0.9983333333333333,
+      "delta_vs_spectral": 0.051818803114042966,
+      "p_value": 0.0,
+      "ci_low": 0.038542012361713326,
+      "ci_high": 0.06475511598904493,
+      "significant": true
+    },
+    {
+      "alpha": 0.5,
+      "accuracy": 0.9466666666666667,
+      "macro_f1": 0.9465145302192903,
+      "delta_vs_spectral": 0.0,
+      "p_value": 2.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "significant": false
+    },
+    {
+      "alpha": 0.6000000000000001,
+      "accuracy": 0.985,
+      "macro_f1": 0.984997332859175,
+      "delta_vs_spectral": 0.03848280263988468,
+      "p_value": 0.0,
+      "ci_low": 0.026714412717103727,
+      "ci_high": 0.04986259678189762,
+      "significant": true
+    },
+    {
+      "alpha": 0.7000000000000001,
+      "accuracy": 0.9908333333333333,
+      "macro_f1": 0.9908328176793277,
+      "delta_vs_spectral": 0.04431828746003741,
+      "p_value": 0.0,
+      "ci_low": 0.03256325838153617,
+      "ci_high": 0.05682333408279474,
+      "significant": true
+    },
+    {
+      "alpha": 0.8,
+      "accuracy": 0.9616666666666667,
+      "macro_f1": 0.9616150602476663,
+      "delta_vs_spectral": 0.01510053002837597,
+      "p_value": 0.0,
+      "ci_low": 0.007992042549179222,
+      "ci_high": 0.022627523106132114,
+      "significant": true
+    },
+    {
+      "alpha": 0.9,
+      "accuracy": 0.9483333333333334,
+      "macro_f1": 0.9481950428783502,
+      "delta_vs_spectral": 0.0016805126590598851,
+      "p_value": 0.232,
+      "ci_low": 0.0,
+      "ci_high": 0.004252869229543141,
+      "significant": false
+    },
+    {
+      "alpha": 1.0,
+      "accuracy": 0.9491666666666667,
+      "macro_f1": 0.9490349716176314,
+      "delta_vs_spectral": 0.0025204413983410667,
+      "p_value": 0.092,
+      "ci_low": 0.0,
+      "ci_high": 0.005865746950068235,
+      "significant": false
+    }
+  ],
+  "best_alpha": 0.0,
+  "best_accuracy": 0.9983333333333333,
+  "boundary_check": {
+    "best_alpha": 0.0,
+    "at_boundary": true,
+    "recommendation": "alpha_opt = 0.00 is at the boundary; use the corresponding fixed basis (fractional)."
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "monotonicity": {
+    "monotonic": false,
+    "n_sign_changes": 1,
+    "n_pos_diffs": 7,
+    "n_neg_diffs": 4,
+    "alphas": [
+      0.0,
+      0.006795569681322333,
+      0.45952037526395395,
+      0.6573952513385245,
+      0.7585784990236513,
+      0.8504825552198997,
+      0.9039699409604145,
+      0.9190406562451958,
+      0.8956947010742435,
+      0.7337527793651385,
+      0.4181441758330993,
+      0.0
+    ],
+    "gamma4_grid": [
+      -2.0,
+      -1.5,
+      -1.0,
+      -0.7,
+      -0.5,
+      -0.25,
+      0.0,
+      0.25,
+      0.5,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "fixed_gamma3": 0.0,
+    "fixed_snr_db": 0.0,
+    "task_type": "detection"
+  },
+  "transferability": {
+    "mean_ratio": 0.8838324631303204,
+    "median_ratio": 0.9705092934308531,
+    "min_ratio": 0.6041114142503649,
+    "passes_90pct": false,
+    "train_on": "classification",
+    "test_on": "detection",
+    "metric": "AUC",
+    "per_snr_records": [
+      {
+        "snr_db": -5.0,
+        "alpha_native": 0.85,
+        "alpha_predicted": 0.6,
+        "metric_native": 0.875611111111111,
+        "metric_predicted": 0.5289666666666666,
+        "ratio": 0.6041114142503649
+      },
+      {
+        "snr_db": -2.0,
+        "alpha_native": 0.4,
+        "alpha_predicted": 0.6,
+        "metric_native": 0.8423777777777779,
+        "metric_predicted": 0.7123777777777778,
+        "ratio": 0.8456749413037169
+      },
+      {
+        "snr_db": 0.0,
+        "alpha_native": 0.9,
+        "alpha_predicted": 0.6,
+        "metric_native": 0.9935333333333332,
+        "metric_predicted": 0.9642333333333334,
+        "ratio": 0.9705092934308531
+      },
+      {
+        "snr_db": 3.0,
+        "alpha_native": 0.85,
+        "alpha_predicted": 0.6,
+        "metric_native": 1.0,
+        "metric_predicted": 0.9989222222222222,
+        "ratio": 0.9989222222222222
+      },
+      {
+        "snr_db": 5.0,
+        "alpha_native": 0.7,
+        "alpha_predicted": 0.6,
+        "metric_native": 1.0,
+        "metric_predicted": 0.9999444444444444,
+        "ratio": 0.9999444444444444
+      }
+    ]
+  },
+  "pareto": {
+    "n_optimal_per_task": {
+      "classification": 1,
+      "denoising": 1,
+      "detection": 2
+    },
+    "non_trivial": true
+  },
+  "regression": {
+    "r2": 0.6913437626154586,
+    "n_features": 11,
+    "feature_names": [
+      "gamma3",
+      "gamma4",
+      "snr_db",
+      "gamma3^2",
+      "gamma3 gamma4",
+      "gamma3 snr_db",
+      "gamma4^2",
+      "gamma4 snr_db",
+      "snr_db^2",
+      "task=denoising",
+      "task=detection"
+    ],
+    "residuals_per_task": {
+      "classification": {
+        "mean": -9.57801628070909e-05,
+        "std": 0.008944497253626579,
+        "count": 5
+      },
+      "denoising": {
+        "mean": 3.193663305744998e-05,
+        "std": 0.054592234556341185,
+        "count": 10
+      },
+      "detection": {
+        "mean": 1.595344834596224e-05,
+        "std": 0.16446045599958029,
+        "count": 10
+      }
+    }
+  }
+}

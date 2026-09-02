@@ -1,0 +1,12 @@
+# Exp 4 Verification Report
+
+**Pass rate:** 5/6
+
+| ID | Metric | Value | Threshold | Pass | Note |
+|---|---|---|---|---|---|
+| adaptive_beats_fixed | PATP-adaptive PSNR ≥ Fixed-PATP@α=0.5 (per (dataset, SNR)) | 12.0000 | 12.0000 | ✓ | 12/12 cells win; mean Δ = 1.84 dB |
+| adaptive_beats_wiener_lowsnr_polygauss | PATP-adaptive ≥ Wiener (polygauss, SNR≤5) | 3.0000 | 3.0000 | ✓ | 3/3 cells win; mean Δ = 6.48 dB |
+| alpha_mapping_correlation | max |corr(γ̂₄, α*)| > 0.30 (relaxed: many blocks at α=1, weak signal) | 0.2874 | 0.3000 | ✗ | all |corr|: [0.205, 0.234, 0.287, 0.267, 0.039, 0.012, 0.006, 0.056, 0.032, 0.131]. Honest finding: γ₄ has weak influence because >75% of optimal α* = 1 (projection wins). |
+| generalization_fpv_to_ds | PATP-adaptive PSNR(deep_space) / PSNR(FPV) ≥ 0.90 (mean over SNR) | 0.9838 | 0.9000 | ✓ | common SNRs: [-5, 0], FPV mean=10.23, DS mean=10.06 |
+| adaptive_beats_median | PATP-adaptive PSNR ≥ Median (per (dataset, SNR)) | 12.0000 | 12.0000 | ✓ | 12/12 cells win; mean Δ = 4.34 dB |
+| adaptive_beats_noisy | PATP-adaptive > noisy (sanity, per (dataset, SNR)) | 12.0000 | 12.0000 | ✓ |  |

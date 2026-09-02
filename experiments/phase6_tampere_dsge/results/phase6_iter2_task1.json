@@ -1,0 +1,29 @@
+{
+  "task": "Task 1 \u2014 4-class multi-protocol",
+  "bases": {
+    "polynomial": {
+      "accuracy": 0.38083333333333336,
+      "macro_f1": 0.354190629058822,
+      "cond_F_max": 848.443138026731,
+      "duration_sec": 3.3919687271118164
+    },
+    "fractional": {
+      "accuracy": 0.31333333333333335,
+      "macro_f1": 0.29918743679078597,
+      "cond_F_max": 194.06965609135426,
+      "duration_sec": 3.2257673740386963
+    },
+    "trigonometric": {
+      "accuracy": 0.38416666666666666,
+      "macro_f1": 0.37723723505205947,
+      "cond_F_max": 50.51434563999912,
+      "duration_sec": 4.516300201416016
+    },
+    "robust": {
+      "accuracy": 0.3275,
+      "macro_f1": 0.3224343272785189,
+      "cond_F_max": 62.96938068104557,
+      "duration_sec": 2.8931186199188232
+    }
+  }
+}

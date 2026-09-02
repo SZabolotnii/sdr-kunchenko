@@ -5,14 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "sdr-kunchenko"
 version = "0.1.0"
-description = "Reproducibility package for the RADAP article on PMM/PATP amplitude estimation for SDR baseband under non-Gaussian RF noise"
+description = "Reproducibility package for the sdr-kunchenko article series (PMM, PATP, DSGE applied to SDR baseband)"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
     { name = "Serhii Zabolotnii", email = "szabolotnii@healthprecision.com" },
 ]
 license = { text = "MIT" }
-keywords = ["pmm", "gsa", "dsge", "patp", "kunchenko", "sdr", "non-gaussian", "signal-processing"]
+keywords = ["pmm", "dsge", "patp", "kunchenko", "sdr", "non-gaussian", "signal-processing", "rf-fingerprinting"]
 classifiers = [
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -24,6 +24,7 @@ dependencies = [
     "numpy>=1.24",
     "scipy>=1.11",
     "pandas>=2.0",
+    "scikit-learn>=1.3",
     "matplotlib>=3.7",
     "h5py>=3.9",
     "pyyaml>=6.0",

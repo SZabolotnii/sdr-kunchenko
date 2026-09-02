@@ -1,0 +1,11 @@
+# Exp 3 Verification Report
+
+**Pass rate:** 4/5
+
+| ID | Metric | Value | Threshold | Pass | Note |
+|---|---|---|---|---|---|
+| dsge_70pct | DSGE-only RF best-basis accuracy ≥ 0.70 (mean over SNR) | 0.7574 | 0.7000 | ✓ | per-SNR best DSGE acc: {-5.0: 0.7665, 0.0: 0.743, 5.0: 0.743, 10.0: 0.74, 15.0: 0.7945} |
+| hybrid_beats_baselines | Hybrid ≥ Spectral-only AND ≥ DSGE-only on all SNR | 10.0000 | 10.0000 | ✓ | hybrid mean=0.938, spectral mean=0.921, dsge mean=0.757 |
+| hybrid_vs_spectral_significant | Paired bootstrap p-value (hybrid − spectral > 0) | 0.0000 | 0.0500 | ✓ | observed mean diff = 0.0165 |
+| patp_alpha_interior | PATP α* strictly interior on ALL SNR | 5.0000 | 5.0000 | ✓ | α* per SNR: {-5.0: 0.6, 0.0: 0.6, 5.0: 0.6, 10.0: 0.6, 15.0: 0.6} |
+| patp_dominates_poly | PATP@α* ≥ poly-s3 (DSGE-LR), per SNR count | 0.0000 | 2.0000 | ✗ | patp mean=0.710, poly mean=0.724 |

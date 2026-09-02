@@ -1,0 +1,213 @@
+{
+  "config": {
+    "segment_duration_sec": 0.1,
+    "offsets_sec": [
+      0.0,
+      0.4,
+      0.8
+    ],
+    "fs_hz": 120000000.0,
+    "rc_threshold_mhz": 5,
+    "video_threshold_mhz": 15
+  },
+  "Mavic Pro": {
+    "per_segment": [
+      {
+        "offset_sec": 0.0,
+        "n_time_bins": 23436,
+        "median_bw_mhz": 17.8125,
+        "p25_bw_mhz": 17.578125,
+        "p75_bw_mhz": 17.9296875,
+        "n_rc_like": 2657,
+        "n_video_like": 20734,
+        "n_intermediate": 45,
+        "rc_fraction": 0.11337258917904079,
+        "video_fraction": 0.8847072879330944
+      },
+      {
+        "offset_sec": 0.4,
+        "n_time_bins": 23436,
+        "median_bw_mhz": 17.8125,
+        "p25_bw_mhz": 17.578125,
+        "p75_bw_mhz": 17.9296875,
+        "n_rc_like": 2546,
+        "n_video_like": 20848,
+        "n_intermediate": 42,
+        "rc_fraction": 0.1086362860556409,
+        "video_fraction": 0.8895715992490186
+      },
+      {
+        "offset_sec": 0.8,
+        "n_time_bins": 23436,
+        "median_bw_mhz": 17.8125,
+        "p25_bw_mhz": 17.578125,
+        "p75_bw_mhz": 17.9296875,
+        "n_rc_like": 2786,
+        "n_video_like": 20595,
+        "n_intermediate": 55,
+        "rc_fraction": 0.11887694145758662,
+        "video_fraction": 0.8787762416794674
+      }
+    ],
+    "aggregate": {
+      "rc_fraction_mean": 0.11362860556408944,
+      "rc_fraction_std": 0.004184647659991626,
+      "rc_fraction_min": 0.1086362860556409,
+      "rc_fraction_max": 0.11887694145758662,
+      "video_fraction_mean": 0.8843517096205268,
+      "video_fraction_std": 0.00441435259246418,
+      "median_bw_mean": 17.8125,
+      "median_bw_std": 0.0
+    }
+  },
+  "Inspire 2": {
+    "per_segment": [
+      {
+        "offset_sec": 0.0,
+        "n_time_bins": 23436,
+        "median_bw_mhz": 9.140625,
+        "p25_bw_mhz": 8.671875,
+        "p75_bw_mhz": 9.375,
+        "n_rc_like": 5456,
+        "n_video_like": 1481,
+        "n_intermediate": 16499,
+        "rc_fraction": 0.2328042328042328,
+        "video_fraction": 0.06319337770950674
+      },
+      {
+        "offset_sec": 0.4,
+        "n_time_bins": 23436,
+        "median_bw_mhz": 9.140625,
+        "p25_bw_mhz": 8.671875,
+        "p75_bw_mhz": 9.375,
+        "n_rc_like": 5459,
+        "n_video_like": 1485,
+        "n_intermediate": 16492,
+        "rc_fraction": 0.23293224099675713,
+        "video_fraction": 0.06336405529953917
+      },
+      {
+        "offset_sec": 0.8,
+        "n_time_bins": 23436,
+        "median_bw_mhz": 9.140625,
+        "p25_bw_mhz": 8.671875,
+        "p75_bw_mhz": 9.375,
+        "n_rc_like": 5556,
+        "n_video_like": 1566,
+        "n_intermediate": 16314,
+        "rc_fraction": 0.23707117255504354,
+        "video_fraction": 0.06682027649769585
+      }
+    ],
+    "aggregate": {
+      "rc_fraction_mean": 0.23426921545201115,
+      "rc_fraction_std": 0.0019819719523349382,
+      "rc_fraction_min": 0.2328042328042328,
+      "rc_fraction_max": 0.23707117255504354,
+      "video_fraction_mean": 0.06445923650224726,
+      "video_fraction_std": 0.0016709608224044351,
+      "median_bw_mean": 9.140625,
+      "median_bw_std": 0.0
+    }
+  },
+  "Parrot Disco": {
+    "per_segment": [
+      {
+        "offset_sec": 0.0,
+        "n_time_bins": 23436,
+        "median_bw_mhz": 60.703125,
+        "p25_bw_mhz": 7.265625,
+        "p75_bw_mhz": 105.0,
+        "n_rc_like": 5757,
+        "n_video_like": 16901,
+        "n_intermediate": 778,
+        "rc_fraction": 0.24564772145417307,
+        "video_fraction": 0.7211554872845195
+      },
+      {
+        "offset_sec": 0.4,
+        "n_time_bins": 23436,
+        "median_bw_mhz": 17.578125,
+        "p25_bw_mhz": 0.0,
+        "p75_bw_mhz": 84.140625,
+        "n_rc_like": 9331,
+        "n_video_like": 13124,
+        "n_intermediate": 981,
+        "rc_fraction": 0.39814814814814814,
+        "video_fraction": 0.5599931728963987
+      },
+      {
+        "offset_sec": 0.8,
+        "n_time_bins": 23436,
+        "median_bw_mhz": 94.8046875,
+        "p25_bw_mhz": 26.71875,
+        "p75_bw_mhz": 110.390625,
+        "n_rc_like": 3412,
+        "n_video_like": 19421,
+        "n_intermediate": 603,
+        "rc_fraction": 0.1455879842976617,
+        "video_fraction": 0.8286823690049496
+      }
+    ],
+    "aggregate": {
+      "rc_fraction_mean": 0.2631279512999943,
+      "rc_fraction_std": 0.10384548752078154,
+      "rc_fraction_min": 0.1455879842976617,
+      "rc_fraction_max": 0.39814814814814814,
+      "video_fraction_mean": 0.7032770097286226,
+      "video_fraction_std": 0.1104179967099336,
+      "median_bw_mean": 57.6953125,
+      "median_bw_std": 31.599268883081972
+    }
+  },
+  "Yuneec H": {
+    "per_segment": [
+      {
+        "offset_sec": 0.0,
+        "n_time_bins": 23436,
+        "median_bw_mhz": 67.03125,
+        "p25_bw_mhz": 1.5234375,
+        "p75_bw_mhz": 109.1015625,
+        "n_rc_like": 8662,
+        "n_video_like": 14435,
+        "n_intermediate": 339,
+        "rc_fraction": 0.36960232121522446,
+        "video_fraction": 0.6159327530295272
+      },
+      {
+        "offset_sec": 0.4,
+        "n_time_bins": 23436,
+        "median_bw_mhz": 103.125,
+        "p25_bw_mhz": 44.1796875,
+        "p75_bw_mhz": 113.7890625,
+        "n_rc_like": 4514,
+        "n_video_like": 18670,
+        "n_intermediate": 252,
+        "rc_fraction": 0.19260966035159582,
+        "video_fraction": 0.7966376514763611
+      },
+      {
+        "offset_sec": 0.8,
+        "n_time_bins": 23436,
+        "median_bw_mhz": 102.5390625,
+        "p25_bw_mhz": 33.8671875,
+        "p75_bw_mhz": 114.4921875,
+        "n_rc_like": 4983,
+        "n_video_like": 18225,
+        "n_intermediate": 228,
+        "rc_fraction": 0.2126216077828981,
+        "video_fraction": 0.7776497695852534
+      }
+    ],
+    "aggregate": {
+      "rc_fraction_mean": 0.2582778631165728,
+      "rc_fraction_std": 0.07914110073456201,
+      "rc_fraction_min": 0.19260966035159582,
+      "rc_fraction_max": 0.36960232121522446,
+      "video_fraction_mean": 0.730073391363714,
+      "video_fraction_std": 0.08108102492436962,
+      "median_bw_mean": 90.8984375,
+      "median_bw_std": 16.878345299201058
+    }
+  }
+}

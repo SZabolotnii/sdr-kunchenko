@@ -1,0 +1,115 @@
+{
+  "task2": {
+    "bases": {
+      "polynomial": {
+        "accuracy": 0.5483333333333333,
+        "macro_f1": 0.5113815641199009
+      },
+      "fractional": {
+        "accuracy": 0.5225,
+        "macro_f1": 0.4487199736386165
+      },
+      "trigonometric": {
+        "accuracy": 0.5133333333333333,
+        "macro_f1": 0.4468579511012326
+      },
+      "robust": {
+        "accuracy": 0.505,
+        "macro_f1": 0.43812253469167683
+      }
+    },
+    "spectral_only": {
+      "accuracy": 0.9466666666666667,
+      "macro_f1": 0.9465145302192903
+    },
+    "hybrid": {
+      "best_basis": "polynomial",
+      "feature_dim": 19,
+      "accuracy": 0.9491666666666667,
+      "macro_f1": 0.9490349716176314
+    },
+    "bootstrap_hybrid_vs_spectral": {
+      "delta": 0.0025204413983410667,
+      "p_value": 0.092,
+      "ci_low": 0.0,
+      "ci_high": 0.005865746950068235,
+      "significant": false,
+      "metric": "macro_f1",
+      "R": 500
+    }
+  },
+  "task3": {
+    "bases": {
+      "polynomial": {
+        "accuracy": 0.6466666666666666,
+        "macro_f1": 0.6396028831769346
+      },
+      "fractional": {
+        "accuracy": 0.5466666666666666,
+        "macro_f1": 0.5090902527944556
+      },
+      "trigonometric": {
+        "accuracy": 0.61,
+        "macro_f1": 0.5809405556417817
+      },
+      "robust": {
+        "accuracy": 0.5266666666666666,
+        "macro_f1": 0.4968761441343553
+      }
+    },
+    "patp": {
+      "alphas": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "macro_f1": [
+        0.5090902527944556,
+        0.5025128786903696,
+        0.5025128786903696,
+        0.5025128786903696,
+        0.5011961722488039,
+        0.3333333333333333,
+        0.4592273945962544,
+        0.4721684934450892,
+        0.49112121776288375,
+        0.4493401287104684,
+        0.6396028831769346
+      ],
+      "best_alpha": 1.0,
+      "best_f1": 0.6396028831769346,
+      "boundary_check": {
+        "best_alpha": 1.0,
+        "at_boundary": true,
+        "recommendation": "alpha_opt = 1.00 is at the boundary; use the corresponding fixed basis (integer-power)."
+      }
+    },
+    "spectral_only": {
+      "accuracy": 0.955,
+      "macro_f1": 0.9549086900974473
+    },
+    "hybrid": {
+      "best_basis": "polynomial",
+      "feature_dim": 19,
+      "accuracy": 0.955,
+      "macro_f1": 0.9549086900974473
+    },
+    "bootstrap_hybrid_vs_spectral": {
+      "delta": 0.0,
+      "p_value": 2.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "significant": false,
+      "metric": "macro_f1",
+      "R": 500
+    }
+  }
+}

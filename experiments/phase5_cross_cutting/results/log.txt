@@ -1,0 +1,7 @@
+2026-05-06 00:39:45,242 [INFO] Unified table: 25 rows
+2026-05-06 00:39:45,243 [INFO] By task: {'detection': 10, 'denoising': 10, 'classification': 5}
+2026-05-06 00:39:45,245 [INFO] Mapping R² = 0.691
+2026-05-06 00:39:45,248 [INFO] Monotonicity check: monotonic=False, sign_changes=1
+2026-05-06 00:39:45,256 [INFO] Transferability mean ratio = 0.884, passes ≥0.90: False
+2026-05-06 00:39:45,259 [INFO] Pareto-optimal points per task: {'classification': 1, 'denoising': 1, 'detection': 2}
+2026-05-06 00:39:45,291 [INFO] Phase 5 done in 0.0s

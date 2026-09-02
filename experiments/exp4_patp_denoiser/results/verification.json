@@ -1,0 +1,56 @@
+{
+  "checks": [
+    {
+      "id": "adaptive_beats_fixed",
+      "metric": "PATP-adaptive PSNR \u2265 Fixed-PATP@\u03b1=0.5 (per (dataset, SNR))",
+      "value": 12,
+      "threshold": 12,
+      "pass": true,
+      "note": "12/12 cells win; mean \u0394 = 1.84 dB"
+    },
+    {
+      "id": "adaptive_beats_wiener_lowsnr_polygauss",
+      "metric": "PATP-adaptive \u2265 Wiener (polygauss, SNR\u22645)",
+      "value": 3,
+      "threshold": 3,
+      "pass": true,
+      "note": "3/3 cells win; mean \u0394 = 6.48 dB"
+    },
+    {
+      "id": "alpha_mapping_correlation",
+      "metric": "max |corr(\u03b3\u0302\u2084, \u03b1*)| > 0.30 (relaxed: many blocks at \u03b1=1, weak signal)",
+      "value": 0.2873709420083193,
+      "threshold": 0.3,
+      "pass": false,
+      "note": "all |corr|: [0.205, 0.234, 0.287, 0.267, 0.039, 0.012, 0.006, 0.056, 0.032, 0.131]. Honest finding: \u03b3\u2084 has weak influence because >75% of optimal \u03b1* = 1 (projection wins)."
+    },
+    {
+      "id": "generalization_fpv_to_ds",
+      "metric": "PATP-adaptive PSNR(deep_space) / PSNR(FPV) \u2265 0.90 (mean over SNR)",
+      "value": 0.9838368838033575,
+      "threshold": 0.9,
+      "pass": true,
+      "note": "common SNRs: [-5, 0], FPV mean=10.23, DS mean=10.06"
+    },
+    {
+      "id": "adaptive_beats_median",
+      "metric": "PATP-adaptive PSNR \u2265 Median (per (dataset, SNR))",
+      "value": 12,
+      "threshold": 12,
+      "pass": true,
+      "note": "12/12 cells win; mean \u0394 = 4.34 dB"
+    },
+    {
+      "id": "adaptive_beats_noisy",
+      "metric": "PATP-adaptive > noisy (sanity, per (dataset, SNR))",
+      "value": 12,
+      "threshold": 12,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "total": 6,
+    "pass_rate": "5/6"
+  }
+}

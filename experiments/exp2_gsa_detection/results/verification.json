@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "id": "far_ok",
+      "metric": "FAR \u2264 0.02 for ALL detectors+SNR",
+      "value": 0.06,
+      "threshold": 0.02,
+      "pass": false,
+      "note": "max FAR = 0.060 on energy @ SNR=5.0"
+    },
+    {
+      "id": "add_monotone_s",
+      "metric": "ADD(s=3) < ADD(s=1) (mean over SNR)",
+      "value": 572.8293333333334,
+      "threshold": 990.32,
+      "pass": true,
+      "note": "s=1 mean ADD=990, s=3 mean ADD=573"
+    },
+    {
+      "id": "J_monotone",
+      "metric": "J(s+1) \u2265 J(s) for all SNR (\u22641 violation)",
+      "value": 0,
+      "threshold": 1,
+      "pass": true,
+      "note": "diffs min = 0.0004"
+    },
+    {
+      "id": "patp_dominates_fixed",
+      "metric": "PATP@\u03b1_opt ADD \u2264 best fixed (per SNR)",
+      "value": 0,
+      "threshold": 2,
+      "pass": false,
+      "note": "PATP wins 0/5 SNRs. \u03b1_opt range: [0.50, 1.00]"
+    },
+    {
+      "id": "alpha_interior",
+      "metric": "\u03b1_opt strictly interior on \u22651 SNR",
+      "value": 4,
+      "threshold": 1,
+      "pass": true,
+      "note": "interior \u03b1: 4/5, values: [1.0, 0.5, 0.8, 0.7, 0.9]"
+    },
+    {
+      "id": "gsa_beats_energy",
+      "metric": "GSA AUC \u2265 Energy AUC + 0.05 (at least one detector \u00d7 SNR)",
+      "value": 0,
+      "threshold": 1,
+      "pass": false,
+      "note": "max gain = 0.000"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "total": 6,
+    "pass_rate": "3/6"
+  }
+}

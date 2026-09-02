@@ -1,0 +1,72 @@
+{
+  "task_2_balance": {
+    "test_counts": {
+      "1": 900,
+      "0": 300
+    },
+    "majority_baseline_acc": 0.75
+  },
+  "task_3_balance": {
+    "test_counts": {
+      "1": 600,
+      "0": 300
+    },
+    "majority_baseline_acc": 0.6666666666666666
+  },
+  "replications": [
+    {
+      "seed": 42,
+      "spectral_acc": 0.9725,
+      "variants": {
+        "polynomial+spec": {
+          "accuracy": 0.9783333333333334,
+          "delta": 0.007381428134134005,
+          "p_value": 0.008,
+          "significant": true
+        },
+        "fractional+spec": {
+          "accuracy": 0.9725,
+          "delta": 0.0,
+          "p_value": 2.0,
+          "significant": false
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "spectral_acc": 0.9725,
+      "variants": {
+        "polynomial+spec": {
+          "accuracy": 0.9725,
+          "delta": 0.0,
+          "p_value": 2.0,
+          "significant": false
+        },
+        "fractional+spec": {
+          "accuracy": 0.9725,
+          "delta": 0.0,
+          "p_value": 2.0,
+          "significant": false
+        }
+      }
+    },
+    {
+      "seed": 44,
+      "spectral_acc": 0.9741666666666666,
+      "variants": {
+        "polynomial+spec": {
+          "accuracy": 0.9775,
+          "delta": 0.004249093119502834,
+          "p_value": 0.052,
+          "significant": false
+        },
+        "fractional+spec": {
+          "accuracy": 0.9733333333333334,
+          "delta": -0.0010419666234829927,
+          "p_value": 0.68,
+          "significant": false
+        }
+      }
+    }
+  ]
+}

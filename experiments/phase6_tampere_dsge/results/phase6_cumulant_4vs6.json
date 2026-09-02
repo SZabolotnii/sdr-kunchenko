@@ -1,0 +1,210 @@
+{
+  "2.4_GHz": {
+    "per_seed": [
+      {
+        "seed": 42,
+        "spectral_acc": 0.9466666666666667,
+        "configurations": {
+          "cumulant_order4": {
+            "feature_dim_dsge": 6,
+            "feature_dim_total": 21,
+            "accuracy": 0.99,
+            "delta": 0.04348546978070966,
+            "p_value": 0.0,
+            "ci_low": 0.03022071858957266,
+            "ci_high": 0.056350817487008084,
+            "significant": true,
+            "cumulants_only_accuracy": 0.57
+          },
+          "cumulant_order6": {
+            "feature_dim_dsge": 12,
+            "feature_dim_total": 27,
+            "accuracy": 0.9983333333333333,
+            "delta": 0.051818803114042966,
+            "p_value": 0.0,
+            "ci_low": 0.03919078313298433,
+            "ci_high": 0.06486359832208166,
+            "significant": true,
+            "cumulants_only_accuracy": 0.5641666666666667
+          }
+        }
+      },
+      {
+        "seed": 43,
+        "spectral_acc": 0.9483333333333334,
+        "configurations": {
+          "cumulant_order4": {
+            "feature_dim_dsge": 6,
+            "feature_dim_total": 21,
+            "accuracy": 0.9891666666666666,
+            "delta": 0.040971556079559934,
+            "p_value": 0.0,
+            "ci_low": 0.028425377731922982,
+            "ci_high": 0.05335684193812908,
+            "significant": true,
+            "cumulants_only_accuracy": 0.5708333333333333
+          },
+          "cumulant_order6": {
+            "feature_dim_dsge": 12,
+            "feature_dim_total": 27,
+            "accuracy": 0.9966666666666667,
+            "delta": 0.048471586750867934,
+            "p_value": 0.0,
+            "ci_low": 0.035864649683577984,
+            "ci_high": 0.06258115257374637,
+            "significant": true,
+            "cumulants_only_accuracy": 0.5725
+          }
+        }
+      },
+      {
+        "seed": 44,
+        "spectral_acc": 0.9458333333333333,
+        "configurations": {
+          "cumulant_order4": {
+            "feature_dim_dsge": 6,
+            "feature_dim_total": 21,
+            "accuracy": 0.9908333333333333,
+            "delta": 0.04515938780581141,
+            "p_value": 0.0,
+            "ci_low": 0.031142918267952912,
+            "ci_high": 0.05779550743648024,
+            "significant": true,
+            "cumulants_only_accuracy": 0.58
+          },
+          "cumulant_order6": {
+            "feature_dim_dsge": 12,
+            "feature_dim_total": 27,
+            "accuracy": 0.9966666666666667,
+            "delta": 0.05099271824560492,
+            "p_value": 0.0,
+            "ci_low": 0.03794682689265071,
+            "ci_high": 0.06487249565622881,
+            "significant": true,
+            "cumulants_only_accuracy": 0.59
+          }
+        }
+      }
+    ],
+    "summary": {
+      "cumulant_order4": {
+        "n_seeds_significant": 3,
+        "mean_delta": 0.043205471222027,
+        "std_delta": 0.0017211010112711542,
+        "reproducible_2of3": true,
+        "cumulants_only_acc_mean": 0.5736111111111111
+      },
+      "cumulant_order6": {
+        "n_seeds_significant": 3,
+        "mean_delta": 0.05042770270350527,
+        "std_delta": 0.0014237032152306858,
+        "reproducible_2of3": true,
+        "cumulants_only_acc_mean": 0.5755555555555555
+      }
+    }
+  },
+  "5.8_GHz": {
+    "per_seed": [
+      {
+        "seed": 42,
+        "spectral_acc": 0.9725,
+        "configurations": {
+          "cumulant_order4": {
+            "feature_dim_dsge": 6,
+            "feature_dim_total": 21,
+            "accuracy": 0.9833333333333333,
+            "delta": 0.013683371398597322,
+            "p_value": 0.008,
+            "ci_low": 0.005021694299738491,
+            "ci_high": 0.02406617709206511,
+            "significant": true,
+            "cumulants_only_accuracy": 0.7591666666666667
+          },
+          "cumulant_order6": {
+            "feature_dim_dsge": 12,
+            "feature_dim_total": 27,
+            "accuracy": 0.9825,
+            "delta": 0.012617865865035993,
+            "p_value": 0.008,
+            "ci_low": 0.004204339865181231,
+            "ci_high": 0.022190009562862947,
+            "significant": true,
+            "cumulants_only_accuracy": 0.7541666666666667
+          }
+        }
+      },
+      {
+        "seed": 43,
+        "spectral_acc": 0.9725,
+        "configurations": {
+          "cumulant_order4": {
+            "feature_dim_dsge": 6,
+            "feature_dim_total": 21,
+            "accuracy": 0.985,
+            "delta": 0.01574897883216808,
+            "p_value": 0.0,
+            "ci_low": 0.007365087126161127,
+            "ci_high": 0.0264429136813725,
+            "significant": true,
+            "cumulants_only_accuracy": 0.7558333333333334
+          },
+          "cumulant_order6": {
+            "feature_dim_dsge": 12,
+            "feature_dim_total": 27,
+            "accuracy": 0.9833333333333333,
+            "delta": 0.013611309440083375,
+            "p_value": 0.004,
+            "ci_low": 0.0040906531051627835,
+            "ci_high": 0.025411871256252484,
+            "significant": true,
+            "cumulants_only_accuracy": 0.7525
+          }
+        }
+      },
+      {
+        "seed": 44,
+        "spectral_acc": 0.9741666666666666,
+        "configurations": {
+          "cumulant_order4": {
+            "feature_dim_dsge": 6,
+            "feature_dim_total": 21,
+            "accuracy": 0.9816666666666667,
+            "delta": 0.009472696031171512,
+            "p_value": 0.036,
+            "ci_low": 0.0009773662563610814,
+            "ci_high": 0.01839649791664611,
+            "significant": true,
+            "cumulants_only_accuracy": 0.7566666666666667
+          },
+          "cumulant_order6": {
+            "feature_dim_dsge": 12,
+            "feature_dim_total": 27,
+            "accuracy": 0.9816666666666667,
+            "delta": 0.009472696031171512,
+            "p_value": 0.036,
+            "ci_low": 0.0009773662563610814,
+            "ci_high": 0.01839649791664611,
+            "significant": true,
+            "cumulants_only_accuracy": 0.7508333333333334
+          }
+        }
+      }
+    ],
+    "summary": {
+      "cumulant_order4": {
+        "n_seeds_significant": 3,
+        "mean_delta": 0.012968348753978972,
+        "std_delta": 0.0026116884048777204,
+        "reproducible_2of3": true,
+        "cumulants_only_acc_mean": 0.7572222222222224
+      },
+      "cumulant_order6": {
+        "n_seeds_significant": 3,
+        "mean_delta": 0.011900623778763627,
+        "std_delta": 0.001764059219498506,
+        "reproducible_2of3": true,
+        "cumulants_only_acc_mean": 0.7525
+      }
+    }
+  }
+}

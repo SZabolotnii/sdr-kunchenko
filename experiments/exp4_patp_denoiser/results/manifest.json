@@ -1,0 +1,84 @@
+{
+  "experiment_id": "exp4_patp_denoiser",
+  "git_sha": "6dca15003c0fdec8ec3c251be3235ccdfb6af83d",
+  "timestamp_utc": "2026-04-25T15:18:33.334611+00:00",
+  "python": "3.11.12",
+  "platform": "macOS-26.3.1-arm64-arm-64bit",
+  "config": {
+    "experiment_id": "exp4_patp_denoiser",
+    "seed": 42,
+    "dataset": {
+      "root": "${KU_SDR_DATA_ROOT:/Users/serhiizabolotnii/Projects/signal-denoising/data_generation/datasets}",
+      "primary": "fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8",
+      "realnoise": "fpv_realnoise_bpsk_qpsk",
+      "generalization": "deep_space_polygauss_qpsk_bs1024_n400000_0310b7e7"
+    },
+    "monte_carlo": {
+      "snr_grid": [
+        -5,
+        0,
+        5,
+        10,
+        15
+      ],
+      "snr_bucket_tol": 0.5,
+      "N_train": 1000,
+      "N_test": 500
+    },
+    "subspace": {
+      "rank": 128
+    },
+    "alpha_grid": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "poly_degree_for_mapping": 2,
+    "init_method": "projection",
+    "methods": [
+      {
+        "name": "noisy",
+        "kind": "identity"
+      },
+      {
+        "name": "median_w5",
+        "kind": "median",
+        "window": 5
+      },
+      {
+        "name": "wiener",
+        "kind": "wiener"
+      },
+      {
+        "name": "projection_K",
+        "kind": "projection"
+      },
+      {
+        "name": "fixed_patp_05",
+        "kind": "fixed_patp",
+        "alpha": 0.5
+      },
+      {
+        "name": "adaptive_patp",
+        "kind": "adaptive"
+      }
+    ],
+    "output": {
+      "results_dir": "experiments/exp4_patp_denoiser/results",
+      "figures_dir": "experiments/exp4_patp_denoiser/figures",
+      "results_csv": "exp4_denoiser_metrics.csv",
+      "alpha_mapping_json": "exp4_alpha_mapping.json",
+      "manifest": "manifest.json"
+    }
+  },
+  "n_runs": 36000,
+  "elapsed_sec": 509.6180970668793
+}

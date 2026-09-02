@@ -1,0 +1,63 @@
+# Experiment 2 — GSA-CUSUM detection with PATP basis
+# Spec §5
+
+experiment_id: exp2_gsa_detection
+seed: 42
+
+dataset:
+  root: ${KU_SDR_DATA_ROOT:/Users/serhiizabolotnii/Projects/signal-denoising/data_generation/datasets}
+  primary: fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8   # synthetic polygauss
+  realnoise: fpv_realnoise_bpsk_qpsk                                # real RadioML residual
+
+monte_carlo:
+  snr_grid: [-5, -2, 0, 3, 5]    # Spec §5.7
+  snr_bucket_tol: 0.5
+  N_calibration_blocks: 200       # for moments + simulation threshold
+  N_test_blocks: 300              # H0 / H1 each, fresh blocks
+  epsilon: 0.01                   # target FAR
+
+detectors:
+  - name: energy
+    kind: energy
+  - name: gsa_poly_s1
+    kind: gsa
+    basis: poly
+    s: 1
+  - name: gsa_poly_s2
+    kind: gsa
+    basis: poly
+    s: 2
+  - name: gsa_poly_s3
+    kind: gsa
+    basis: poly
+    s: 3
+  - name: gsa_poly_s4
+    kind: gsa
+    basis: poly
+    s: 4
+  - name: gsa_frac_s3
+    kind: gsa
+    basis: frac
+    s: 3
+
+patp_sweep:
+  s: 3
+  alpha_grid: [0.0, 0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45,
+               0.50, 0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 1.00]
+
+verification:
+  pass_criteria:
+    far_max: 0.02
+    monotone_J: true
+    auc_gain_over_energy: 0.05    # GSA AUC ≥ Energy AUC + 5% on γ₄>1 blocks (relaxed)
+    add_monotone_with_s: true     # ADD(s=3) < ADD(s=1)
+    alpha_opt_interior: true      # α_opt ∉ {0, 1}
+
+output:
+  results_dir: experiments/exp2_gsa_detection/results
+  figures_dir: experiments/exp2_gsa_detection/figures
+  results_json: exp2_gsa_results.json
+  alpha_sweep_csv: exp2_patp_alpha_sweep.csv
+  per_detector_csv: exp2_per_detector.csv
+  manifest: manifest.json
+  verification_report: verification_report.txt

@@ -1,0 +1,138 @@
+{
+  "task": "Task 2 \u2014 DJI vs non-DJI, 5.8 GHz, complementarity-aware PATP \u03b1-sweep",
+  "spectral_baseline": {
+    "accuracy": 0.9725
+  },
+  "alphas": [
+    0.0,
+    0.1,
+    0.2,
+    0.30000000000000004,
+    0.4,
+    0.5,
+    0.6000000000000001,
+    0.7000000000000001,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "per_alpha": [
+    {
+      "alpha": 0.0,
+      "accuracy": 0.9725,
+      "macro_f1": 0.964523726549601,
+      "delta_vs_spectral": 0.0,
+      "p_value": 2.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "significant": false
+    },
+    {
+      "alpha": 0.1,
+      "accuracy": 0.9716666666666667,
+      "macro_f1": 0.9634858812074002,
+      "delta_vs_spectral": -0.0010378453422007494,
+      "p_value": 0.784,
+      "ci_low": -0.003315471582396562,
+      "ci_high": 0.0,
+      "significant": false
+    },
+    {
+      "alpha": 0.2,
+      "accuracy": 0.9725,
+      "macro_f1": 0.964523726549601,
+      "delta_vs_spectral": 0.0,
+      "p_value": 2.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "significant": false
+    },
+    {
+      "alpha": 0.30000000000000004,
+      "accuracy": 0.9725,
+      "macro_f1": 0.964523726549601,
+      "delta_vs_spectral": 0.0,
+      "p_value": 2.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "significant": false
+    },
+    {
+      "alpha": 0.4,
+      "accuracy": 0.9725,
+      "macro_f1": 0.964523726549601,
+      "delta_vs_spectral": 0.0,
+      "p_value": 2.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "significant": false
+    },
+    {
+      "alpha": 0.5,
+      "accuracy": 0.9725,
+      "macro_f1": 0.964523726549601,
+      "delta_vs_spectral": 0.0,
+      "p_value": 2.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "significant": false
+    },
+    {
+      "alpha": 0.6000000000000001,
+      "accuracy": 0.9733333333333334,
+      "macro_f1": 0.9655636265805757,
+      "delta_vs_spectral": 0.0010399000309747608,
+      "p_value": 0.764,
+      "ci_low": 0.0,
+      "ci_high": 0.0032228910423477116,
+      "significant": false
+    },
+    {
+      "alpha": 0.7000000000000001,
+      "accuracy": 0.9741666666666666,
+      "macro_f1": 0.9666055932040587,
+      "delta_vs_spectral": 0.0020818666544577535,
+      "p_value": 0.284,
+      "ci_low": 0.0,
+      "ci_high": 0.005277187549519399,
+      "significant": false
+    },
+    {
+      "alpha": 0.8,
+      "accuracy": 0.9766666666666667,
+      "macro_f1": 0.9697440127363299,
+      "delta_vs_spectral": 0.005220286186728984,
+      "p_value": 0.052,
+      "ci_low": 0.00036371614436851273,
+      "ci_high": 0.011239697286713101,
+      "significant": false
+    },
+    {
+      "alpha": 0.9,
+      "accuracy": 0.9741666666666666,
+      "macro_f1": 0.966673803728413,
+      "delta_vs_spectral": 0.0021500771788121043,
+      "p_value": 0.24,
+      "ci_low": 0.0,
+      "ci_high": 0.005482081434404731,
+      "significant": false
+    },
+    {
+      "alpha": 1.0,
+      "accuracy": 0.9783333333333334,
+      "macro_f1": 0.971905154683735,
+      "delta_vs_spectral": 0.007381428134134005,
+      "p_value": 0.008,
+      "ci_low": 0.0022915320265779414,
+      "ci_high": 0.013000501831094797,
+      "significant": true
+    }
+  ],
+  "best_alpha": 1.0,
+  "best_accuracy": 0.9783333333333334,
+  "boundary_check": {
+    "best_alpha": 1.0,
+    "at_boundary": true,
+    "recommendation": "alpha_opt = 1.00 is at the boundary; use the corresponding fixed basis (integer-power)."
+  }
+}

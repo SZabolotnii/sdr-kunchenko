@@ -1,0 +1,32 @@
+======================================================================
+Phase 6 — Tampere DSGE Verification Report
+======================================================================
+
+Dataset: Tampere Zenodo (https://zenodo.org/records/4264467)
+  4 classes, 4000 windows total
+  Train 2800 / Test 1200, time-ordered split
+
+--- Task 1 — 4-class multi-protocol ---
+  polynomial     acc=0.2483 F1=0.2141 cond_max=604
+  fractional     acc=0.2408 F1=0.2115 cond_max=193
+  trigonometric  acc=0.3492 F1=0.2870 cond_max=47
+  robust         acc=0.3142 F1=0.2699 cond_max=62
+  PATP α_opt = 0.90 F1 = 0.2358  (alpha_opt = 0.90 is interior; PATP gives genuine benefit over discrete bases.)
+
+--- Task 2 — DJI vs non-DJI (binary) ---
+  polynomial     acc=0.5408 F1=0.5268 cond_max=563
+  fractional     acc=0.5425 F1=0.5399 cond_max=191
+  trigonometric  acc=0.6033 F1=0.5977 cond_max=45
+  robust         acc=0.4575 F1=0.4551 cond_max=61
+  PATP α_opt = 0.70 F1 = 0.5775  (alpha_opt = 0.70 is interior; PATP gives genuine benefit over discrete bases.)
+
+--- Task 3 — Inter-model OcuSync (Mavic Pro vs Inspire 2) ---
+  polynomial     acc=0.5683 F1=0.5622 cond_max=543
+  fractional     acc=0.4567 F1=0.4398 cond_max=192
+  trigonometric  acc=0.5917 F1=0.5903 cond_max=46
+  robust         acc=0.4600 F1=0.4492 cond_max=62
+  PATP α_opt = 1.00 F1 = 0.5622  (alpha_opt = 1.00 is at the boundary; use the corresponding fixed basis (integer-power).)
+
+Bootstrap re_im vs magnitude on Task 3:
+  Δ = +0.0056, p = 0.6440, 95% CI [-0.0198, +0.0317]
+  Significant? False

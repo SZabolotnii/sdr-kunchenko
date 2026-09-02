@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "id": "dsge_70pct",
+      "metric": "DSGE-only RF best-basis accuracy \u2265 0.70 (mean over SNR)",
+      "value": 0.7574,
+      "threshold": 0.7,
+      "pass": true,
+      "note": "per-SNR best DSGE acc: {-5.0: 0.7665, 0.0: 0.743, 5.0: 0.743, 10.0: 0.74, 15.0: 0.7945}"
+    },
+    {
+      "id": "hybrid_beats_baselines",
+      "metric": "Hybrid \u2265 Spectral-only AND \u2265 DSGE-only on all SNR",
+      "value": 10,
+      "threshold": 10,
+      "pass": true,
+      "note": "hybrid mean=0.938, spectral mean=0.921, dsge mean=0.757"
+    },
+    {
+      "id": "hybrid_vs_spectral_significant",
+      "metric": "Paired bootstrap p-value (hybrid \u2212 spectral > 0)",
+      "value": 0.0,
+      "threshold": 0.05,
+      "pass": true,
+      "note": "observed mean diff = 0.0165"
+    },
+    {
+      "id": "patp_alpha_interior",
+      "metric": "PATP \u03b1* strictly interior on ALL SNR",
+      "value": 5,
+      "threshold": 5,
+      "pass": true,
+      "note": "\u03b1* per SNR: {-5.0: 0.6, 0.0: 0.6, 5.0: 0.6, 10.0: 0.6, 15.0: 0.6}"
+    },
+    {
+      "id": "patp_dominates_poly",
+      "metric": "PATP@\u03b1* \u2265 poly-s3 (DSGE-LR), per SNR count",
+      "value": 0,
+      "threshold": 2,
+      "pass": false,
+      "note": "patp mean=0.710, poly mean=0.724"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "total": 5,
+    "pass_rate": "4/5"
+  }
+}

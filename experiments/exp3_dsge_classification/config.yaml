@@ -1,0 +1,74 @@
+# Experiment 3 — DSGE noise-type classification
+# Spec §6 (pivoted: BPSK/QPSK labels not available in radioml2018_bpsk_qpsk_*;
+# task reformulated as 2-class noise type discrimination).
+
+experiment_id: exp3_dsge_noise_type
+seed: 42
+
+dataset:
+  root: ${KU_SDR_DATA_ROOT:/Users/serhiizabolotnii/Projects/signal-denoising/data_generation/datasets}
+  classes:
+    - name: synthetic_polygauss
+      dataset: fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8
+      source: noise_only           # use non_gaussian_noise_only.npy
+    - name: real_radioml_residual
+      dataset: fpv_realnoise_bpsk_qpsk
+      source: noise_only
+
+monte_carlo:
+  N_train_per_class: 2000
+  N_test_per_class: 1000
+  snr_grid: [-5, 0, 5, 10, 15]    # condition on SNR bucket; ±0.5 dB tol
+  snr_bucket_tol: 0.5
+
+regularization:
+  ridge: 1.0e-4
+
+bases:
+  - name: poly_s3
+    kind: poly
+    s: 3
+  - name: poly_s4
+    kind: poly
+    s: 4
+  - name: frac_s3
+    kind: frac
+    s: 3
+  - name: trig_s4
+    kind: trig
+    s: 4
+  - name: robust_s3
+    kind: robust
+    s: 3
+
+patp_sweep:
+  s: 3
+  alpha_grid: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+
+classifiers:
+  - name: lr
+    kind: logistic
+  - name: rf
+    kind: random_forest
+  - name: svm_rbf
+    kind: svm
+
+baselines:
+  spectral:
+    features: [gamma3, gamma4, gamma6, m2]
+  cnn:
+    enabled: false   # require torch; will mark as TODO if not installed
+
+verification:
+  pass_criteria:
+    accuracy_min: 0.70           # DSGE alone should reach ≥70%
+    hybrid_p_value_max: 0.05     # hybrid > best baseline (paired bootstrap)
+    alpha_opt_interior: true
+
+output:
+  results_dir: experiments/exp3_dsge_classification/results
+  figures_dir: experiments/exp3_dsge_classification/figures
+  results_json: exp3_classification_results.json
+  basis_csv: exp3_basis_comparison.csv
+  patp_csv: exp3_patp_alpha_sweep.csv
+  manifest: manifest.json

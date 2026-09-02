@@ -1,0 +1,12 @@
+# Phase 5 Verification Report — Cross-cutting α-mapping (Spec §8)
+
+**Pass rate:** 4/6
+
+| ID | Metric | Value | Threshold | Pass | Note |
+|---|---|---|---|---|---|
+| monotonicity_in_gamma4 | α* monotonic in γ₄ (Spec §8.3 #1) | 1.0000 | 0.0000 | ✗ | sign-changes=1, +diffs=7, −diffs=4. At γ₃=0.0, SNR=0.0, task=detection. NOTE: a unimodal α(γ₄) is informative even if non-monotonic. |
+| transferability_classification_to_detection | Mean ratio of AUC at predicted α vs native α (≥ 0.90 target) | 0.8838 | 0.9000 | ✗ | train_on=classification, test_on=detection; per-SNR ratios: -5dB→0.604; -2dB→0.846; +0dB→0.971; +3dB→0.999; +5dB→1.000 |
+| transferability_high_snr | Transferability ≥ 0.90 at SNR ≥ 0 dB (relaxed view) | 3.0000 | 3.0000 | ✓ | median ratio overall = 0.971 |
+| pareto_frontier_non_trivial | ≥1 Pareto-optimal point per task_type (Spec §8.3 #3) | 1.0000 | 1.0000 | ✓ | per-task counts: {'classification': 1, 'denoising': 1, 'detection': 2} |
+| regression_r2 | R² of poly₂ + task-dummies fit | 0.6913 | 0.5000 | ✓ | per-task residual std: classification=0.009 (n=5), denoising=0.055 (n=10), detection=0.164 (n=10) |
+| task_residual_heterogeneity | detection/classification residual std ratio (>2 ⇒ task-confounded) | 18.3868 | 2.0000 | ✓ | Confirms task_type is a confounder: DSGE has internally-consistent α (small residuals), GSA has SNR-dependent α (large residuals). |

@@ -1,0 +1,278 @@
+{
+  "manifest": {
+    "experiment_id": "exp3_dsge_noise_type_review_response",
+    "git_sha": "7b462dd83de0b4bf1ded2873cea2f551f57aa8bf",
+    "timestamp_utc": "2026-07-03T14:28:15.774933+00:00",
+    "python": "3.13.12",
+    "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+    "elapsed_sec": 296.8685870170593,
+    "config": {
+      "experiment_id": "exp3_dsge_noise_type",
+      "seed": 42,
+      "dataset": {
+        "root": "${KU_SDR_DATA_ROOT:/Users/serhiizabolotnii/Projects/signal-denoising/data_generation/datasets}",
+        "classes": [
+          {
+            "name": "synthetic_polygauss",
+            "dataset": "fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8",
+            "source": "noise_only"
+          },
+          {
+            "name": "real_radioml_residual",
+            "dataset": "fpv_realnoise_bpsk_qpsk",
+            "source": "noise_only"
+          }
+        ]
+      },
+      "monte_carlo": {
+        "N_train_per_class": 2000,
+        "N_test_per_class": 1000,
+        "snr_grid": [
+          -5,
+          0,
+          5,
+          10,
+          15
+        ],
+        "snr_bucket_tol": 0.5
+      },
+      "regularization": {
+        "ridge": 0.0001
+      },
+      "bases": [
+        {
+          "name": "poly_s3",
+          "kind": "poly",
+          "s": 3
+        },
+        {
+          "name": "poly_s4",
+          "kind": "poly",
+          "s": 4
+        },
+        {
+          "name": "frac_s3",
+          "kind": "frac",
+          "s": 3
+        },
+        {
+          "name": "trig_s4",
+          "kind": "trig",
+          "s": 4
+        },
+        {
+          "name": "robust_s3",
+          "kind": "robust",
+          "s": 3
+        }
+      ],
+      "patp_sweep": {
+        "s": 3,
+        "alpha_grid": [
+          0.0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0
+        ]
+      },
+      "classifiers": [
+        {
+          "name": "lr",
+          "kind": "logistic"
+        },
+        {
+          "name": "rf",
+          "kind": "random_forest"
+        },
+        {
+          "name": "svm_rbf",
+          "kind": "svm"
+        }
+      ],
+      "baselines": {
+        "spectral": {
+          "features": [
+            "gamma3",
+            "gamma4",
+            "gamma6",
+            "m2"
+          ]
+        },
+        "cnn": {
+          "enabled": false
+        }
+      },
+      "verification": {
+        "pass_criteria": {
+          "accuracy_min": 0.7,
+          "hybrid_p_value_max": 0.05,
+          "alpha_opt_interior": true
+        }
+      },
+      "output": {
+        "results_dir": "experiments/exp3_dsge_classification/results",
+        "figures_dir": "experiments/exp3_dsge_classification/figures",
+        "results_json": "exp3_classification_results.json",
+        "basis_csv": "exp3_basis_comparison.csv",
+        "patp_csv": "exp3_patp_alpha_sweep.csv",
+        "manifest": "manifest.json"
+      }
+    }
+  },
+  "block_bootstrap": {
+    "delta": 0.0148,
+    "ci_low": 0.0112,
+    "ci_high": 0.0184,
+    "p_value_one_sided": 0.0,
+    "n_blocks": 10000,
+    "n_boot": 5000
+  },
+  "s_lambda_mean": [
+    {
+      "s": 2,
+      "ridge": 1e-06,
+      "dsge_accuracy": 0.5,
+      "hybrid_accuracy": 0.9207000000000001
+    },
+    {
+      "s": 2,
+      "ridge": 0.0001,
+      "dsge_accuracy": 0.8374,
+      "hybrid_accuracy": 0.9422
+    },
+    {
+      "s": 2,
+      "ridge": 0.01,
+      "dsge_accuracy": 0.8154999999999999,
+      "hybrid_accuracy": 0.9389
+    },
+    {
+      "s": 3,
+      "ridge": 1e-06,
+      "dsge_accuracy": 0.5579,
+      "hybrid_accuracy": 0.9260999999999999
+    },
+    {
+      "s": 3,
+      "ridge": 0.0001,
+      "dsge_accuracy": 0.7489,
+      "hybrid_accuracy": 0.9382999999999999
+    },
+    {
+      "s": 3,
+      "ridge": 0.01,
+      "dsge_accuracy": 0.7517,
+      "hybrid_accuracy": 0.9372
+    },
+    {
+      "s": 4,
+      "ridge": 1e-06,
+      "dsge_accuracy": 0.5545,
+      "hybrid_accuracy": 0.9254
+    },
+    {
+      "s": 4,
+      "ridge": 0.0001,
+      "dsge_accuracy": 0.7432000000000001,
+      "hybrid_accuracy": 0.9352
+    },
+    {
+      "s": 4,
+      "ridge": 0.01,
+      "dsge_accuracy": 0.7506999999999999,
+      "hybrid_accuracy": 0.9361
+    },
+    {
+      "s": 5,
+      "ridge": 1e-06,
+      "dsge_accuracy": 0.6722,
+      "hybrid_accuracy": 0.9324999999999999
+    },
+    {
+      "s": 5,
+      "ridge": 0.0001,
+      "dsge_accuracy": 0.7185,
+      "hybrid_accuracy": 0.9400999999999999
+    },
+    {
+      "s": 5,
+      "ridge": 0.01,
+      "dsge_accuracy": 0.7125999999999999,
+      "hybrid_accuracy": 0.9395
+    }
+  ],
+  "augmented_patp_best": [
+    {
+      "snr_db": -5,
+      "alpha": 0.1,
+      "accuracy": 0.699,
+      "auc": 0.782606
+    },
+    {
+      "snr_db": 0,
+      "alpha": 0.7,
+      "accuracy": 0.682,
+      "auc": 0.764251
+    },
+    {
+      "snr_db": 5,
+      "alpha": 0.6,
+      "accuracy": 0.708,
+      "auc": 0.785338
+    },
+    {
+      "snr_db": 10,
+      "alpha": 0.2,
+      "accuracy": 0.68,
+      "auc": 0.743722
+    },
+    {
+      "snr_db": 15,
+      "alpha": 0.4,
+      "accuracy": 0.7575,
+      "auc": 0.8764179999999999
+    }
+  ],
+  "block_size_mean": [
+    {
+      "block_size": 128,
+      "spectral_accuracy": 0.7389,
+      "dsge_accuracy": 0.651,
+      "hybrid_accuracy": 0.7994
+    },
+    {
+      "block_size": 256,
+      "spectral_accuracy": 0.8063,
+      "dsge_accuracy": 0.6767000000000001,
+      "hybrid_accuracy": 0.8558
+    },
+    {
+      "block_size": 512,
+      "spectral_accuracy": 0.8642,
+      "dsge_accuracy": 0.721,
+      "hybrid_accuracy": 0.8972999999999999
+    },
+    {
+      "block_size": 1024,
+      "spectral_accuracy": 0.9213000000000001,
+      "dsge_accuracy": 0.7516,
+      "hybrid_accuracy": 0.9361
+    }
+  ],
+  "runtime": [
+    {
+      "snr_db": -5,
+      "n_test_blocks": 2000,
+      "spectral_sec_per_block": 5.349329148884863e-05,
+      "dsge_fit_sec": 0.10594375000800937,
+      "dsge_transform_sec_per_block": 9.755766647867859e-05
+    }
+  ]
+}

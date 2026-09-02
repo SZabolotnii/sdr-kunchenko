@@ -1,0 +1,12 @@
+# Exp 2 Verification Report
+
+**Pass rate:** 3/6
+
+| ID | Metric | Value | Threshold | Pass | Note |
+|---|---|---|---|---|---|
+| far_ok | FAR ≤ 0.02 for ALL detectors+SNR | 0.0600 | 0.0200 | ✗ | max FAR = 0.060 on energy @ SNR=5.0 |
+| add_monotone_s | ADD(s=3) < ADD(s=1) (mean over SNR) | 572.8293 | 990.3200 | ✓ | s=1 mean ADD=990, s=3 mean ADD=573 |
+| J_monotone | J(s+1) ≥ J(s) for all SNR (≤1 violation) | 0.0000 | 1.0000 | ✓ | diffs min = 0.0004 |
+| patp_dominates_fixed | PATP@α_opt ADD ≤ best fixed (per SNR) | 0.0000 | 2.0000 | ✗ | PATP wins 0/5 SNRs. α_opt range: [0.50, 1.00] |
+| alpha_interior | α_opt strictly interior on ≥1 SNR | 4.0000 | 1.0000 | ✓ | interior α: 4/5, values: [1.0, 0.5, 0.8, 0.7, 0.9] |
+| gsa_beats_energy | GSA AUC ≥ Energy AUC + 0.05 (at least one detector × SNR) | 0.0000 | 1.0000 | ✗ | max gain = 0.000 |

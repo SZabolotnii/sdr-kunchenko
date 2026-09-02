@@ -1,0 +1,26 @@
+experiment,task_type,dataset,snr_db,alpha_opt,primary_metric,metric_value,secondary_metric_ADD,secondary_metric_FAR,secondary_metric_AUC,alpha_p25,alpha_p75,gamma4_block_mean,gamma4_block_std,n_blocks,gamma3,gamma4,metric_normalized,alpha_distance_to_05
+exp2_gsa,detection,fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8,-5.0,1.0,AUC,0.5682222222222222,895.3636363636364,0.01,,,,,,,0.08,0.5,0.0,0.5
+exp2_gsa,detection,fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8,-2.0,1.0,AUC,0.6230666666666667,1009.0,0.006666666666666667,,,,,,,0.08,0.5,0.12702007205352553,0.5
+exp2_gsa,detection,fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8,0.0,1.0,AUC,0.6453222222222222,925.1428571428571,0.0033333333333333335,,,,,,,0.08,0.5,0.17856407617086992,0.5
+exp2_gsa,detection,fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8,3.0,0.7,AUC,0.6983555555555556,474.86138613861385,0.06,,,,,,,0.08,0.5,0.3013896037056101,0.19999999999999996
+exp2_gsa,detection,fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8,5.0,1.0,AUC,0.8314444444444444,448.82089552238807,0.006666666666666667,,,,,,,0.08,0.5,0.6096242923314462,0.5
+exp2_gsa,detection,fpv_realnoise_bpsk_qpsk,-5.0,0.85,AUC,0.875611111111111,564.6428571428571,0.02,,,,,,,0.0,-0.46,0.7119145651055068,0.35
+exp2_gsa,detection,fpv_realnoise_bpsk_qpsk,-2.0,0.4,AUC,0.8423777777777779,710.8630136986301,0.0233333333333333,,,,,,,0.0,-0.46,0.6349459598558932,0.09999999999999998
+exp2_gsa,detection,fpv_realnoise_bpsk_qpsk,0.0,0.9,AUC,0.9935333333333332,299.61538461538464,0.04,,,,,,,0.0,-0.46,0.9850231600617597,0.4
+exp2_gsa,detection,fpv_realnoise_bpsk_qpsk,3.0,0.85,AUC,1.0,147.23666666666668,0.01,,,,,,,0.0,-0.46,1.0,0.35
+exp2_gsa,detection,fpv_realnoise_bpsk_qpsk,5.0,0.7,AUC,1.0,236.36949152542377,0.0,,,,,,,0.0,-0.46,1.0,0.19999999999999996
+exp3_dsge,classification,fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8 + fpv_realnoise_bpsk_qpsk,-5.0,0.6,accuracy,0.7085,,,0.801807,,,,,,0.04,0.96,0.24786324786324904,0.09999999999999998
+exp3_dsge,classification,fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8 + fpv_realnoise_bpsk_qpsk,0.0,0.6,accuracy,0.6945,,,0.785274,,,,,,0.04,0.96,0.008547008547009504,0.09999999999999998
+exp3_dsge,classification,fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8 + fpv_realnoise_bpsk_qpsk,5.0,0.6,accuracy,0.702,,,0.786252,,,,,,0.04,0.96,0.13675213675213688,0.09999999999999998
+exp3_dsge,classification,fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8 + fpv_realnoise_bpsk_qpsk,10.0,0.6,accuracy,0.694,,,0.7706679999999999,,,,,,0.04,0.96,0.0,0.09999999999999998
+exp3_dsge,classification,fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8 + fpv_realnoise_bpsk_qpsk,15.0,0.6,accuracy,0.7525,,,0.8591840000000001,,,,,,0.04,0.96,1.0,0.09999999999999998
+exp4_denoiser,denoising,fpv_realnoise_bpsk_qpsk,-5.0,1.0,alpha_concentration,0.7666666666666667,,,,1.0,1.0,-0.06187582345452987,0.3957378931099368,300.0,0.0,-0.46,0.041666666666667594,0.5
+exp4_denoiser,denoising,fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8,-5.0,1.0,alpha_concentration,0.7633333333333333,,,,1.0,1.0,0.41343914988517255,1.3994203276540036,300.0,0.08,0.5,0.0,0.5
+exp4_denoiser,denoising,fpv_realnoise_bpsk_qpsk,0.0,1.0,alpha_concentration,0.81,,,,1.0,1.0,-0.08572267774291364,0.27927739151911324,300.0,0.0,-0.46,0.5833333333333338,0.5
+exp4_denoiser,denoising,fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8,0.0,1.0,alpha_concentration,0.8433333333333334,,,,1.0,1.0,0.17478749166099358,0.937903716370778,300.0,0.08,0.5,1.0,0.5
+exp4_denoiser,denoising,fpv_realnoise_bpsk_qpsk,5.0,1.0,alpha_concentration,0.77,,,,1.0,1.0,-0.015937527125662404,0.25569747262513504,300.0,0.0,-0.46,0.0833333333333338,0.5
+exp4_denoiser,denoising,fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8,5.0,1.0,alpha_concentration,0.7866666666666666,,,,1.0,1.0,0.2726307019467533,0.8928452893272376,300.0,0.08,0.5,0.2916666666666662,0.5
+exp4_denoiser,denoising,fpv_realnoise_bpsk_qpsk,10.0,1.0,alpha_concentration,0.7766666666666666,,,,1.0,1.0,0.17300741664358998,0.5138905539053682,300.0,0.0,-0.46,0.1666666666666662,0.5
+exp4_denoiser,denoising,fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8,10.0,1.0,alpha_concentration,0.7666666666666667,,,,1.0,1.0,0.4042952061951044,0.7867260672727754,300.0,0.08,0.5,0.041666666666667594,0.5
+exp4_denoiser,denoising,fpv_realnoise_bpsk_qpsk,15.0,1.0,alpha_concentration,0.8166666666666667,,,,1.0,1.0,0.9563509678019102,1.220751201789934,300.0,0.0,-0.46,0.6666666666666662,0.5
+exp4_denoiser,denoising,fpv_telemetry_polygauss_qpsk_bs1024_n100000_953c56e8,15.0,1.0,alpha_concentration,0.8,,,,1.0,1.0,0.8634613238270017,1.2967150030069672,300.0,0.08,0.5,0.4583333333333338,0.5

@@ -1,0 +1,357 @@
+{
+  "hypothesis": "frac DSGE + cumulant_order6 \u2248 cumulants only (mechanism redundancy)",
+  "2.4_GHz": {
+    "per_seed": [
+      {
+        "seed": 42,
+        "accuracies": {
+          "spec_only": 0.9466666666666667,
+          "frac+spec": 0.9983333333333333,
+          "cum6+spec": 0.9983333333333333,
+          "frac+cum6+spec": 0.9991666666666666
+        },
+        "feature_dims": {
+          "spec_only": 15,
+          "frac+spec": 19,
+          "cum6+spec": 27,
+          "frac+cum6+spec": 31
+        },
+        "deltas_vs_spec": {
+          "frac+spec": {
+            "delta": 0.051818803114042966,
+            "p_value": 0.0,
+            "ci_low": 0.038542012361713326,
+            "ci_high": 0.06475511598904493,
+            "significant": true
+          },
+          "cum6+spec": {
+            "delta": 0.051818803114042966,
+            "p_value": 0.0,
+            "ci_low": 0.03919078313298433,
+            "ci_high": 0.06486359832208166,
+            "significant": true
+          },
+          "frac+cum6+spec": {
+            "delta": 0.052652135868672234,
+            "p_value": 0.0,
+            "ci_low": 0.03936350909640716,
+            "ci_high": 0.0664239459234437,
+            "significant": true
+          }
+        },
+        "synergy_check": {
+          "combined_vs_frac+spec": {
+            "delta": 0.0008333327546292679,
+            "p_value": 0.62,
+            "significant": false
+          },
+          "combined_vs_cum6+spec": {
+            "delta": 0.0008333327546292679,
+            "p_value": 0.652,
+            "significant": false
+          }
+        }
+      },
+      {
+        "seed": 43,
+        "accuracies": {
+          "spec_only": 0.9483333333333334,
+          "frac+spec": 0.9941666666666666,
+          "cum6+spec": 0.9966666666666667,
+          "frac+cum6+spec": 0.9975
+        },
+        "feature_dims": {
+          "spec_only": 15,
+          "frac+spec": 19,
+          "cum6+spec": 27,
+          "frac+cum6+spec": 31
+        },
+        "deltas_vs_spec": {
+          "frac+spec": {
+            "delta": 0.04597152251341008,
+            "p_value": 0.0,
+            "ci_low": 0.032970800252461525,
+            "ci_high": 0.06011819104589185,
+            "significant": true
+          },
+          "cum6+spec": {
+            "delta": 0.048471586750867934,
+            "p_value": 0.0,
+            "ci_low": 0.035864649683577984,
+            "ci_high": 0.06258115257374637,
+            "significant": true
+          },
+          "frac+cum6+spec": {
+            "delta": 0.049304955385537474,
+            "p_value": 0.0,
+            "ci_low": 0.03642724156002606,
+            "ci_high": 0.06320812638721957,
+            "significant": true
+          }
+        },
+        "synergy_check": {
+          "combined_vs_frac+spec": {
+            "delta": 0.0033334328721273954,
+            "p_value": 0.132,
+            "significant": false
+          },
+          "combined_vs_cum6+spec": {
+            "delta": 0.0008333686346695401,
+            "p_value": 0.752,
+            "significant": false
+          }
+        }
+      },
+      {
+        "seed": 44,
+        "accuracies": {
+          "spec_only": 0.9458333333333333,
+          "frac+spec": 0.9983333333333333,
+          "cum6+spec": 0.9966666666666667,
+          "frac+cum6+spec": 0.9975
+        },
+        "feature_dims": {
+          "spec_only": 15,
+          "frac+spec": 19,
+          "cum6+spec": 27,
+          "frac+cum6+spec": 31
+        },
+        "deltas_vs_spec": {
+          "frac+spec": {
+            "delta": 0.05265939417155652,
+            "p_value": 0.0,
+            "ci_low": 0.039316005455315474,
+            "ci_high": 0.06729002287593168,
+            "significant": true
+          },
+          "cum6+spec": {
+            "delta": 0.05099271824560492,
+            "p_value": 0.0,
+            "ci_low": 0.03794682689265071,
+            "ci_high": 0.06487249565622881,
+            "significant": true
+          },
+          "frac+cum6+spec": {
+            "delta": 0.05182605910211091,
+            "p_value": 0.0,
+            "ci_low": 0.038438025781658634,
+            "ci_high": 0.06570681302345704,
+            "significant": true
+          }
+        },
+        "synergy_check": {
+          "combined_vs_frac+spec": {
+            "delta": -0.0008333350694456065,
+            "p_value": 0.78,
+            "significant": false
+          },
+          "combined_vs_cum6+spec": {
+            "delta": 0.000833340856505993,
+            "p_value": 0.708,
+            "significant": false
+          }
+        }
+      }
+    ],
+    "summary": {
+      "frac+spec": {
+        "n_seeds_significant": 3,
+        "mean_accuracy": 0.9969444444444444,
+        "mean_delta_vs_spec": 0.050149906599669856
+      },
+      "cum6+spec": {
+        "n_seeds_significant": 3,
+        "mean_accuracy": 0.9972222222222222,
+        "mean_delta_vs_spec": 0.05042770270350527
+      },
+      "frac+cum6+spec": {
+        "n_seeds_significant": 3,
+        "mean_accuracy": 0.9980555555555556,
+        "mean_delta_vs_spec": 0.05126105011877354
+      },
+      "synergy": {
+        "vs_frac+spec_seeds_significant": 0,
+        "vs_frac+spec_mean_delta": 0.0011111435191036856,
+        "vs_cum6+spec_seeds_significant": 0,
+        "vs_cum6+spec_mean_delta": 0.0008333474152682671
+      }
+    }
+  },
+  "5.8_GHz": {
+    "per_seed": [
+      {
+        "seed": 42,
+        "accuracies": {
+          "spec_only": 0.9725,
+          "frac+spec": 0.9725,
+          "cum6+spec": 0.9825,
+          "frac+cum6+spec": 0.9825
+        },
+        "feature_dims": {
+          "spec_only": 15,
+          "frac+spec": 19,
+          "cum6+spec": 27,
+          "frac+cum6+spec": 31
+        },
+        "deltas_vs_spec": {
+          "frac+spec": {
+            "delta": 0.0,
+            "p_value": 2.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "significant": false
+          },
+          "cum6+spec": {
+            "delta": 0.012617865865035993,
+            "p_value": 0.008,
+            "ci_low": 0.004204339865181231,
+            "ci_high": 0.022190009562862947,
+            "significant": true
+          },
+          "frac+cum6+spec": {
+            "delta": 0.012617865865035993,
+            "p_value": 0.008,
+            "ci_low": 0.004204339865181231,
+            "ci_high": 0.022190009562862947,
+            "significant": true
+          }
+        },
+        "synergy_check": {
+          "combined_vs_frac+spec": {
+            "delta": 0.012617865865035993,
+            "p_value": 0.008,
+            "significant": true
+          },
+          "combined_vs_cum6+spec": {
+            "delta": 0.0,
+            "p_value": 2.0,
+            "significant": false
+          }
+        }
+      },
+      {
+        "seed": 43,
+        "accuracies": {
+          "spec_only": 0.9725,
+          "frac+spec": 0.9725,
+          "cum6+spec": 0.9833333333333333,
+          "frac+cum6+spec": 0.9833333333333333
+        },
+        "feature_dims": {
+          "spec_only": 15,
+          "frac+spec": 19,
+          "cum6+spec": 27,
+          "frac+cum6+spec": 31
+        },
+        "deltas_vs_spec": {
+          "frac+spec": {
+            "delta": 0.0,
+            "p_value": 2.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "significant": false
+          },
+          "cum6+spec": {
+            "delta": 0.013611309440083375,
+            "p_value": 0.004,
+            "ci_low": 0.0040906531051627835,
+            "ci_high": 0.025411871256252484,
+            "significant": true
+          },
+          "frac+cum6+spec": {
+            "delta": 0.013611309440083375,
+            "p_value": 0.004,
+            "ci_low": 0.0040906531051627835,
+            "ci_high": 0.025411871256252484,
+            "significant": true
+          }
+        },
+        "synergy_check": {
+          "combined_vs_frac+spec": {
+            "delta": 0.013611309440083375,
+            "p_value": 0.004,
+            "significant": true
+          },
+          "combined_vs_cum6+spec": {
+            "delta": 0.0,
+            "p_value": 2.0,
+            "significant": false
+          }
+        }
+      },
+      {
+        "seed": 44,
+        "accuracies": {
+          "spec_only": 0.9741666666666666,
+          "frac+spec": 0.9733333333333334,
+          "cum6+spec": 0.9816666666666667,
+          "frac+cum6+spec": 0.9816666666666667
+        },
+        "feature_dims": {
+          "spec_only": 15,
+          "frac+spec": 19,
+          "cum6+spec": 27,
+          "frac+cum6+spec": 31
+        },
+        "deltas_vs_spec": {
+          "frac+spec": {
+            "delta": -0.0010419666234829927,
+            "p_value": 0.68,
+            "ci_low": -0.0031322393261058734,
+            "ci_high": 0.0,
+            "significant": false
+          },
+          "cum6+spec": {
+            "delta": 0.009472696031171512,
+            "p_value": 0.036,
+            "ci_low": 0.0009773662563610814,
+            "ci_high": 0.01839649791664611,
+            "significant": true
+          },
+          "frac+cum6+spec": {
+            "delta": 0.009472696031171512,
+            "p_value": 0.036,
+            "ci_low": 0.0009773662563610814,
+            "ci_high": 0.01839649791664611,
+            "significant": true
+          }
+        },
+        "synergy_check": {
+          "combined_vs_frac+spec": {
+            "delta": 0.010514662654654505,
+            "p_value": 0.028,
+            "significant": true
+          },
+          "combined_vs_cum6+spec": {
+            "delta": 0.0,
+            "p_value": 2.0,
+            "significant": false
+          }
+        }
+      }
+    ],
+    "summary": {
+      "frac+spec": {
+        "n_seeds_significant": 0,
+        "mean_accuracy": 0.9727777777777779,
+        "mean_delta_vs_spec": -0.00034732220782766426
+      },
+      "cum6+spec": {
+        "n_seeds_significant": 3,
+        "mean_accuracy": 0.9824999999999999,
+        "mean_delta_vs_spec": 0.011900623778763627
+      },
+      "frac+cum6+spec": {
+        "n_seeds_significant": 3,
+        "mean_accuracy": 0.9824999999999999,
+        "mean_delta_vs_spec": 0.011900623778763627
+      },
+      "synergy": {
+        "vs_frac+spec_seeds_significant": 3,
+        "vs_frac+spec_mean_delta": 0.012247945986591291,
+        "vs_cum6+spec_seeds_significant": 0,
+        "vs_cum6+spec_mean_delta": 0.0
+      }
+    }
+  }
+}

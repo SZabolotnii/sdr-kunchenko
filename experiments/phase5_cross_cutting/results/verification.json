@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "id": "monotonicity_in_gamma4",
+      "metric": "\u03b1* monotonic in \u03b3\u2084 (Spec \u00a78.3 #1)",
+      "value": 1,
+      "threshold": 0,
+      "pass": false,
+      "note": "sign-changes=1, +diffs=7, \u2212diffs=4. At \u03b3\u2083=0.0, SNR=0.0, task=detection. NOTE: a unimodal \u03b1(\u03b3\u2084) is informative even if non-monotonic."
+    },
+    {
+      "id": "transferability_classification_to_detection",
+      "metric": "Mean ratio of AUC at predicted \u03b1 vs native \u03b1 (\u2265 0.90 target)",
+      "value": 0.8838324631303204,
+      "threshold": 0.9,
+      "pass": false,
+      "note": "train_on=classification, test_on=detection; per-SNR ratios: -5dB\u21920.604; -2dB\u21920.846; +0dB\u21920.971; +3dB\u21920.999; +5dB\u21921.000"
+    },
+    {
+      "id": "transferability_high_snr",
+      "metric": "Transferability \u2265 0.90 at SNR \u2265 0 dB (relaxed view)",
+      "value": 3,
+      "threshold": 3,
+      "pass": true,
+      "note": "median ratio overall = 0.971"
+    },
+    {
+      "id": "pareto_frontier_non_trivial",
+      "metric": "\u22651 Pareto-optimal point per task_type (Spec \u00a78.3 #3)",
+      "value": 1,
+      "threshold": 1,
+      "pass": true,
+      "note": "per-task counts: {'classification': 1, 'denoising': 1, 'detection': 2}"
+    },
+    {
+      "id": "regression_r2",
+      "metric": "R\u00b2 of poly\u2082 + task-dummies fit",
+      "value": 0.6913437626154586,
+      "threshold": 0.5,
+      "pass": true,
+      "note": "per-task residual std: classification=0.009 (n=5), denoising=0.055 (n=10), detection=0.164 (n=10)"
+    },
+    {
+      "id": "task_residual_heterogeneity",
+      "metric": "detection/classification residual std ratio (>2 \u21d2 task-confounded)",
+      "value": 18.386774721508154,
+      "threshold": 2.0,
+      "pass": true,
+      "note": "Confirms task_type is a confounder: DSGE has internally-consistent \u03b1 (small residuals), GSA has SNR-dependent \u03b1 (large residuals)."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "total": 6,
+    "pass_rate": "4/6"
+  }
+}

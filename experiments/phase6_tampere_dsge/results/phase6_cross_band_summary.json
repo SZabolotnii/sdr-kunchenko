@@ -1,0 +1,16 @@
+{
+  "2.4_GHz": {
+    "best_alpha": 0.0,
+    "best_accuracy": 0.9983333333333333,
+    "spectral_baseline": 0.9466666666666667,
+    "boost_pp": 5.166666666666664,
+    "best_branch": "fractional (\u03b1=0, boundary)"
+  },
+  "5.8_GHz": {
+    "best_alpha": 1.0,
+    "best_accuracy": 0.9783333333333334,
+    "spectral_baseline": 0.9725,
+    "boost_pp": 0.5833333333333357,
+    "best_branch": "polynomial (\u03b1=1, boundary)"
+  }
+}

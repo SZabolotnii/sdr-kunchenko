@@ -1,0 +1,271 @@
+{
+  "config": {
+    "window_samples": 1024,
+    "windows_per_class": 1000,
+    "train_frac": 0.7,
+    "ridge": 0.01,
+    "fs_hz": 120000000.0,
+    "seed": 42,
+    "class_names": [
+      "DJI_Mavic_Pro",
+      "DJI_Inspire_2",
+      "Parrot_Disco",
+      "Yuneec_Typhoon_H"
+    ]
+  },
+  "task1_4class": {
+    "task": "Task 1 \u2014 4-class multi-protocol",
+    "bases": {
+      "polynomial": {
+        "accuracy": 0.24833333333333332,
+        "macro_f1": 0.2141035421259173,
+        "feature_dim": 8,
+        "cond_F_max": 603.8346361656652,
+        "duration_seconds": 0.8918721675872803
+      },
+      "fractional": {
+        "accuracy": 0.24083333333333334,
+        "macro_f1": 0.21150037929694898,
+        "feature_dim": 8,
+        "cond_F_max": 192.84388260944232,
+        "duration_seconds": 0.8109719753265381
+      },
+      "trigonometric": {
+        "accuracy": 0.3491666666666667,
+        "macro_f1": 0.2870354650885738,
+        "feature_dim": 8,
+        "cond_F_max": 47.237232285375235,
+        "duration_seconds": 1.2133660316467285
+      },
+      "robust": {
+        "accuracy": 0.31416666666666665,
+        "macro_f1": 0.2699274369050087,
+        "feature_dim": 8,
+        "cond_F_max": 62.174226653345684,
+        "duration_seconds": 0.7064924240112305
+      }
+    },
+    "patp": {
+      "alphas": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "macro_f1": [
+        0.21150037929694898,
+        0.20757959226233655,
+        0.208920203747831,
+        0.2096922203915656,
+        0.21367941231542995,
+        0.23482577198485446,
+        0.2164280122243983,
+        0.19261904121542472,
+        0.21971256832789504,
+        0.23575430337116698,
+        0.2141035421259173
+      ],
+      "accuracy": [
+        0.24083333333333334,
+        0.23583333333333334,
+        0.2375,
+        0.23833333333333334,
+        0.2425,
+        0.25,
+        0.2625,
+        0.23,
+        0.235,
+        0.2675,
+        0.24833333333333332
+      ],
+      "best_alpha": 0.9,
+      "best_macro_f1": 0.23575430337116698,
+      "best_accuracy": 0.2675,
+      "boundary_check": {
+        "best_alpha": 0.9,
+        "at_boundary": false,
+        "recommendation": "alpha_opt = 0.90 is interior; PATP gives genuine benefit over discrete bases."
+      }
+    }
+  },
+  "task2_dji_vs_nondji": {
+    "task": "Task 2 \u2014 DJI vs non-DJI (binary)",
+    "bases": {
+      "polynomial": {
+        "accuracy": 0.5408333333333334,
+        "macro_f1": 0.5267512244560537,
+        "feature_dim": 4,
+        "cond_F_max": 562.6803999448974,
+        "duration_seconds": 0.4578280448913574
+      },
+      "fractional": {
+        "accuracy": 0.5425,
+        "macro_f1": 0.5398538400342525,
+        "feature_dim": 4,
+        "cond_F_max": 190.70179767273726,
+        "duration_seconds": 0.46269750595092773
+      },
+      "trigonometric": {
+        "accuracy": 0.6033333333333334,
+        "macro_f1": 0.5977000160581927,
+        "feature_dim": 4,
+        "cond_F_max": 44.952973990649475,
+        "duration_seconds": 0.6540286540985107
+      },
+      "robust": {
+        "accuracy": 0.4575,
+        "macro_f1": 0.455138555363907,
+        "feature_dim": 4,
+        "cond_F_max": 61.22076817578986,
+        "duration_seconds": 0.41418027877807617
+      }
+    },
+    "patp": {
+      "alphas": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "macro_f1": [
+        0.5398538400342525,
+        0.5364740793627774,
+        0.5335020231632688,
+        0.5319173834181733,
+        0.53023013577851,
+        0.4091108715614644,
+        0.5736090755127069,
+        0.57745727445715,
+        0.4253819036427732,
+        0.5190977520814852,
+        0.5267512244560537
+      ],
+      "accuracy": [
+        0.5425,
+        0.5383333333333333,
+        0.535,
+        0.5333333333333333,
+        0.5308333333333334,
+        0.4141666666666667,
+        0.5791666666666667,
+        0.5875,
+        0.45666666666666667,
+        0.5316666666666666,
+        0.5408333333333334
+      ],
+      "best_alpha": 0.7000000000000001,
+      "best_macro_f1": 0.57745727445715,
+      "best_accuracy": 0.5875,
+      "boundary_check": {
+        "best_alpha": 0.7000000000000001,
+        "at_boundary": false,
+        "recommendation": "alpha_opt = 0.70 is interior; PATP gives genuine benefit over discrete bases."
+      }
+    }
+  },
+  "task3_ocusync_intermodel": {
+    "task": "Task 3 \u2014 Inter-model OcuSync (Mavic Pro vs Inspire 2)",
+    "bases": {
+      "polynomial": {
+        "accuracy": 0.5683333333333334,
+        "macro_f1": 0.5622029586515626,
+        "feature_dim": 4,
+        "cond_F_max": 542.6627810757828,
+        "duration_seconds": 0.22554945945739746
+      },
+      "fractional": {
+        "accuracy": 0.45666666666666667,
+        "macro_f1": 0.43983687683284456,
+        "feature_dim": 4,
+        "cond_F_max": 191.6273186731148,
+        "duration_seconds": 0.22265267372131348
+      },
+      "trigonometric": {
+        "accuracy": 0.5916666666666667,
+        "macro_f1": 0.590272454881193,
+        "feature_dim": 4,
+        "cond_F_max": 45.85357637482205,
+        "duration_seconds": 0.32053589820861816
+      },
+      "robust": {
+        "accuracy": 0.46,
+        "macro_f1": 0.44920440636474906,
+        "feature_dim": 4,
+        "cond_F_max": 61.605143565616046,
+        "duration_seconds": 0.19536638259887695
+      }
+    },
+    "patp": {
+      "alphas": [
+        0.0,
+        0.1,
+        0.2,
+        0.30000000000000004,
+        0.4,
+        0.5,
+        0.6000000000000001,
+        0.7000000000000001,
+        0.8,
+        0.9,
+        1.0
+      ],
+      "macro_f1": [
+        0.43983687683284456,
+        0.4395780888701576,
+        0.4435847253197397,
+        0.4435847253197397,
+        0.44614702950190155,
+        0.394362916375495,
+        0.44801284624648735,
+        0.43974771873322593,
+        0.45018801042172363,
+        0.5279625966552778,
+        0.5622029586515626
+      ],
+      "accuracy": [
+        0.45666666666666667,
+        0.4533333333333333,
+        0.45666666666666667,
+        0.45666666666666667,
+        0.4583333333333333,
+        0.4583333333333333,
+        0.45,
+        0.44333333333333336,
+        0.4683333333333333,
+        0.5333333333333333,
+        0.5683333333333334
+      ],
+      "best_alpha": 1.0,
+      "best_macro_f1": 0.5622029586515626,
+      "best_accuracy": 0.5683333333333334,
+      "boundary_check": {
+        "best_alpha": 1.0,
+        "at_boundary": true,
+        "recommendation": "alpha_opt = 1.00 is at the boundary; use the corresponding fixed basis (integer-power)."
+      }
+    }
+  },
+  "bootstrap_re_im_vs_magnitude_task3": {
+    "delta": 0.005584688343367894,
+    "p_value": 0.644,
+    "ci_low": -0.019772578197747935,
+    "ci_high": 0.031740882751008045,
+    "significant": false,
+    "metric": "macro_f1",
+    "R": 1000
+  }
+}

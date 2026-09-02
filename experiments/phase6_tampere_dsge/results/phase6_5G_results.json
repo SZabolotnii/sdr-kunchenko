@@ -1,0 +1,183 @@
+{
+  "config": {
+    "window_samples": 4096,
+    "windows_per_class": 1000,
+    "fs_hz": 200000000.0,
+    "band": "5.8_GHz",
+    "seed": 42
+  },
+  "task1_4class": {
+    "spectral": {
+      "accuracy": 0.97,
+      "macro_f1": 0.9698596447812979
+    },
+    "bases": {
+      "polynomial": {
+        "accuracy": 0.2941666666666667,
+        "macro_f1": 0.24068849925935365
+      },
+      "fractional": {
+        "accuracy": 0.31083333333333335,
+        "macro_f1": 0.26748169884013134
+      },
+      "trigonometric": {
+        "accuracy": 0.29833333333333334,
+        "macro_f1": 0.26116310310460966
+      },
+      "robust": {
+        "accuracy": 0.32083333333333336,
+        "macro_f1": 0.2736570215027234
+      }
+    },
+    "hybrid_variants": {
+      "poly + spec": {
+        "accuracy": 0.9716666666666667,
+        "macro_f1": 0.9715446857211498,
+        "feature_dim": 23,
+        "delta": 0.0016850409398518895,
+        "p_value": 0.372,
+        "significant": false
+      },
+      "frac + spec": {
+        "accuracy": 0.97,
+        "macro_f1": 0.9698596447812979,
+        "feature_dim": 23,
+        "delta": 0.0,
+        "p_value": 1.244,
+        "significant": false
+      },
+      "trig + spec": {
+        "accuracy": 0.9708333333333333,
+        "macro_f1": 0.9707024002828163,
+        "feature_dim": 23,
+        "delta": 0.0008427555015183552,
+        "p_value": 0.82,
+        "significant": false
+      },
+      "all 4 bases + spec": {
+        "accuracy": 0.9725,
+        "macro_f1": 0.9722792833237629,
+        "feature_dim": 47,
+        "delta": 0.0024196385424649636,
+        "p_value": 0.424,
+        "significant": false
+      }
+    }
+  },
+  "task2_dji_vs_nondji": {
+    "spectral": {
+      "accuracy": 0.9725,
+      "macro_f1": 0.964523726549601
+    },
+    "bases": {
+      "polynomial": {
+        "accuracy": 0.7491666666666666,
+        "macro_f1": 0.4347196682186314
+      },
+      "fractional": {
+        "accuracy": 0.75,
+        "macro_f1": 0.42857142857142855
+      },
+      "trigonometric": {
+        "accuracy": 0.7566666666666667,
+        "macro_f1": 0.45618435102182714
+      },
+      "robust": {
+        "accuracy": 0.75,
+        "macro_f1": 0.42857142857142855
+      }
+    },
+    "hybrid_variants": {
+      "poly + spec": {
+        "accuracy": 0.9783333333333334,
+        "macro_f1": 0.971905154683735,
+        "feature_dim": 19,
+        "delta": 0.007381428134134005,
+        "p_value": 0.008,
+        "significant": true
+      },
+      "frac + spec": {
+        "accuracy": 0.9725,
+        "macro_f1": 0.964523726549601,
+        "feature_dim": 19,
+        "delta": 0.0,
+        "p_value": 2.0,
+        "significant": false
+      },
+      "trig + spec": {
+        "accuracy": 0.9725,
+        "macro_f1": 0.964523726549601,
+        "feature_dim": 19,
+        "delta": 0.0,
+        "p_value": 2.0,
+        "significant": false
+      },
+      "all 4 bases + spec": {
+        "accuracy": 0.9791666666666666,
+        "macro_f1": 0.9729577464788732,
+        "feature_dim": 31,
+        "delta": 0.008434019929272285,
+        "p_value": 0.004,
+        "significant": true
+      }
+    }
+  },
+  "task3_ocusync1_vs_2": {
+    "spectral": {
+      "accuracy": 0.6688888888888889,
+      "macro_f1": 0.5744370255655132
+    },
+    "bases": {
+      "polynomial": {
+        "accuracy": 0.6666666666666666,
+        "macro_f1": 0.4
+      },
+      "fractional": {
+        "accuracy": 0.6666666666666666,
+        "macro_f1": 0.4
+      },
+      "trigonometric": {
+        "accuracy": 0.6688888888888889,
+        "macro_f1": 0.4071565619501498
+      },
+      "robust": {
+        "accuracy": 0.6666666666666666,
+        "macro_f1": 0.4
+      }
+    },
+    "hybrid_variants": {
+      "poly + spec": {
+        "accuracy": 0.6688888888888889,
+        "macro_f1": 0.5744370255655132,
+        "feature_dim": 19,
+        "delta": 0.0,
+        "p_value": 2.0,
+        "significant": false
+      },
+      "frac + spec": {
+        "accuracy": 0.6677777777777778,
+        "macro_f1": 0.57358205336642,
+        "feature_dim": 19,
+        "delta": -0.0008549721990932513,
+        "p_value": 0.712,
+        "significant": false
+      },
+      "trig + spec": {
+        "accuracy": 0.6711111111111111,
+        "macro_f1": 0.5761498367604101,
+        "feature_dim": 19,
+        "delta": 0.0017128111948968572,
+        "p_value": 0.264,
+        "significant": false
+      },
+      "all 4 bases + spec": {
+        "accuracy": 0.6711111111111111,
+        "macro_f1": 0.5761498367604101,
+        "feature_dim": 31,
+        "delta": 0.0017128111948968572,
+        "p_value": 0.508,
+        "significant": false
+      }
+    }
+  }
+}

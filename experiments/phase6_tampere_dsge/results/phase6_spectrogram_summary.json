@@ -1,0 +1,54 @@
+{
+  "Mavic Pro (DJI OcuSync 1)": {
+    "median_bw_mhz": 17.8125,
+    "p25_bw_mhz": 17.34375,
+    "p75_bw_mhz": 17.9296875,
+    "min_bw_mhz": 0.1171875,
+    "max_bw_mhz": 119.8828125,
+    "n_rc_like_bins": 2479,
+    "n_video_like_bins": 20883,
+    "n_intermediate_bins": 74,
+    "n_total_bins": 23436,
+    "rc_fraction": 0.10577743642259771,
+    "video_fraction": 0.8910650281618023
+  },
+  "Inspire 2 (DJI OcuSync 1)": {
+    "median_bw_mhz": 9.0234375,
+    "p25_bw_mhz": 8.203125,
+    "p75_bw_mhz": 9.375,
+    "min_bw_mhz": 0.1171875,
+    "max_bw_mhz": 119.8828125,
+    "n_rc_like_bins": 5449,
+    "n_video_like_bins": 1495,
+    "n_intermediate_bins": 16492,
+    "n_total_bins": 23436,
+    "rc_fraction": 0.23250554702167606,
+    "video_fraction": 0.06379074927462024
+  },
+  "Parrot Disco (WiFi-based)": {
+    "median_bw_mhz": 103.7109375,
+    "p25_bw_mhz": 67.5,
+    "p75_bw_mhz": 113.3203125,
+    "min_bw_mhz": 0.234375,
+    "max_bw_mhz": 119.8828125,
+    "n_rc_like_bins": 1279,
+    "n_video_like_bins": 21662,
+    "n_intermediate_bins": 495,
+    "n_total_bins": 23436,
+    "rc_fraction": 0.05457415941286909,
+    "video_fraction": 0.9243044888206179
+  },
+  "Yuneec Typhoon H (WiFi)": {
+    "median_bw_mhz": 103.9453125,
+    "p25_bw_mhz": 32.6953125,
+    "p75_bw_mhz": 115.078125,
+    "min_bw_mhz": 0.1171875,
+    "max_bw_mhz": 119.8828125,
+    "n_rc_like_bins": 5315,
+    "n_video_like_bins": 17967,
+    "n_intermediate_bins": 154,
+    "n_total_bins": 23436,
+    "rc_fraction": 0.2267878477555897,
+    "video_fraction": 0.7666410650281618
+  }
+}

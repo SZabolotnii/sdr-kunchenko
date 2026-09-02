@@ -1,0 +1,219 @@
+{
+  "candidates": {
+    "cumulant_explicit": {
+      "description": "\u03b3\u2083, \u03b3\u2084 on Re/Im/|\u00b7| \u2014 6 features",
+      "per_seed": [
+        {
+          "seed": 42,
+          "accuracy": 0.9833333333333333,
+          "delta": 0.013683371398597322,
+          "p_value": 0.008,
+          "ci_low": 0.005021694299738491,
+          "ci_high": 0.02406617709206511,
+          "significant": true
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.985,
+          "delta": 0.01574897883216808,
+          "p_value": 0.0,
+          "ci_low": 0.007365087126161127,
+          "ci_high": 0.0264429136813725,
+          "significant": true
+        },
+        {
+          "seed": 44,
+          "accuracy": 0.9816666666666667,
+          "delta": 0.009472696031171512,
+          "p_value": 0.036,
+          "ci_low": 0.0009773662563610814,
+          "ci_high": 0.01839649791664611,
+          "significant": true
+        }
+      ],
+      "summary": {
+        "n_seeds_significant": 3,
+        "mean_delta": 0.012968348753978972,
+        "std_delta": 0.0026116884048777204,
+        "accuracy_range": [
+          0.9816666666666667,
+          0.985
+        ],
+        "reproducible_2of3": true
+      }
+    },
+    "envelope_stats": {
+      "description": "Statistics of |y(t)| \u2014 5 features",
+      "per_seed": [
+        {
+          "seed": 42,
+          "accuracy": 0.9816666666666667,
+          "delta": 0.011554562685629266,
+          "p_value": 0.0,
+          "ci_low": 0.00533989977580174,
+          "ci_high": 0.020414291511490823,
+          "significant": true
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.9833333333333333,
+          "delta": 0.013611309440083375,
+          "p_value": 0.0,
+          "ci_low": 0.006136453883605339,
+          "ci_high": 0.0221025805112178,
+          "significant": true
+        },
+        {
+          "seed": 44,
+          "accuracy": 0.9825,
+          "delta": 0.01053599921057824,
+          "p_value": 0.004,
+          "ci_low": 0.004168250704453988,
+          "ci_high": 0.018233492280473856,
+          "significant": true
+        }
+      ],
+      "summary": {
+        "n_seeds_significant": 3,
+        "mean_delta": 0.011900623778763627,
+        "std_delta": 0.001279114788192924,
+        "accuracy_range": [
+          0.9816666666666667,
+          0.9833333333333333
+        ],
+        "reproducible_2of3": true
+      }
+    },
+    "phase_derivative": {
+      "description": "d(arg)/dn statistics \u2014 4 features",
+      "per_seed": [
+        {
+          "seed": 42,
+          "accuracy": 0.9825,
+          "delta": 0.012665868647179446,
+          "p_value": 0.0,
+          "ci_low": 0.005303606262417995,
+          "ci_high": 0.021386847050281755,
+          "significant": true
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.98,
+          "delta": 0.009416685504359146,
+          "p_value": 0.0,
+          "ci_low": 0.0030848248605565565,
+          "ci_high": 0.017105624455202795,
+          "significant": true
+        },
+        {
+          "seed": 44,
+          "accuracy": 0.9816666666666667,
+          "delta": 0.009522792676966652,
+          "p_value": 0.0,
+          "ci_low": 0.00259502063525442,
+          "ci_high": 0.01809618277886949,
+          "significant": true
+        }
+      ],
+      "summary": {
+        "n_seeds_significant": 3,
+        "mean_delta": 0.010535115609501747,
+        "std_delta": 0.0015072925094794403,
+        "accuracy_range": [
+          0.98,
+          0.9825
+        ],
+        "reproducible_2of3": true
+      }
+    },
+    "hermite_orth": {
+      "description": "H_2, H_3, H_4 means on Re/Im \u2014 6 features",
+      "per_seed": [
+        {
+          "seed": 42,
+          "accuracy": 0.9733333333333334,
+          "delta": 0.0010399000309747608,
+          "p_value": 0.728,
+          "ci_low": 0.0,
+          "ci_high": 0.003696602493111459,
+          "significant": false
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.9725,
+          "delta": 0.0,
+          "p_value": 2.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "significant": false
+        },
+        {
+          "seed": 44,
+          "accuracy": 0.975,
+          "delta": 0.0011103067152310464,
+          "p_value": 0.592,
+          "ci_low": -0.0020917049695413138,
+          "ci_high": 0.004941915207458561,
+          "significant": false
+        }
+      ],
+      "summary": {
+        "n_seeds_significant": 0,
+        "mean_delta": 0.0007167355820686024,
+        "std_delta": 0.0005076230203930241,
+        "accuracy_range": [
+          0.9725,
+          0.975
+        ],
+        "reproducible_2of3": false
+      }
+    },
+    "mixed_exponents": {
+      "description": "sign(x)|x|^p, p\u2208{0.25,0.75,1.5,2.5} \u2014 8 features",
+      "per_seed": [
+        {
+          "seed": 42,
+          "accuracy": 0.9725,
+          "delta": 0.0,
+          "p_value": 2.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "significant": false
+        },
+        {
+          "seed": 43,
+          "accuracy": 0.9725,
+          "delta": 0.0,
+          "p_value": 2.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "significant": false
+        },
+        {
+          "seed": 44,
+          "accuracy": 0.975,
+          "delta": 0.0011103067152310464,
+          "p_value": 0.752,
+          "ci_low": 0.0,
+          "ci_high": 0.0034637409629081654,
+          "significant": false
+        }
+      ],
+      "summary": {
+        "n_seeds_significant": 0,
+        "mean_delta": 0.0003701022384103488,
+        "std_delta": 0.0005234036050245559,
+        "accuracy_range": [
+          0.9725,
+          0.975
+        ],
+        "reproducible_2of3": false
+      }
+    }
+  },
+  "spectral_baselines": {
+    "42": 0.9725,
+    "43": 0.9725,
+    "44": 0.9741666666666666
+  }
+}
